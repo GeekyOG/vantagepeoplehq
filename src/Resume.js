@@ -252,7 +252,7 @@ export default function CVServiceLanding() {
 
           {/* Mobile Menu */}
           {mobileMenuOpen && (
-            <div className="md:hidden mt-4 pb-4 space-y-4 border-t pt-4">
+            <div className="md:hidden mt-4 pb-4 space-y-4 border-t pt-4 absolute bg-white right-0 left-0 px-8">
               <button
                 onClick={() => scrollToSection("home")}
                 className="block w-full text-left text-gray-700 hover:text-cyan-500 transition py-2"
