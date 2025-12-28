@@ -22,7 +22,7 @@ import {
   Sparkles,
 } from "lucide-react";
 
-export default function CVServiceLanding() {
+export default function VantagePeopleLanding() {
   const [formData, setFormData] = useState({
     fullName: "",
     email: "",
@@ -45,63 +45,53 @@ export default function CVServiceLanding() {
 
   const testimonials = [
     {
-      name: "Sarah Johnson",
-      role: "Software Engineer at Google",
+      name: "Chioma Adeleke",
+      role: "Investment Banking Analyst at Access Bank",
       image: "👩‍💼",
-      text: "CVPRO transformed my resume completely! I landed interviews at 5 top tech companies within 2 weeks. The attention to detail and ATS optimization made all the difference.",
+      text: "Vantage People gave me the clarity I needed to position myself competitively. Within 3 weeks of optimizing my CV and preparing with their frameworks, I secured my dream role in banking!",
       rating: 5,
     },
     {
-      name: "Michael Chen",
-      role: "Marketing Director at Amazon",
+      name: "Olumide Taiwo",
+      role: "Management Consultant at PwC Nigeria",
       image: "👨‍💼",
-      text: "I was struggling to get responses from recruiters. After using CVPRO's service, I got my dream job at Amazon! The professional presentation was outstanding.",
+      text: "I was stuck with no interview responses despite a strong academic record. Vantage People taught me how to translate my achievements into professional value. Game changer!",
       rating: 5,
     },
     {
-      name: "Emily Rodriguez",
-      role: "Data Analyst at Microsoft",
+      name: "Funke Okafor",
+      role: "Tech Product Manager at Flutterwave",
       image: "👩‍💻",
-      text: "The team understood exactly what I needed. They highlighted my achievements perfectly and created a modern, eye-catching design. Highly recommend!",
+      text: "The insider knowledge they shared about what recruiters actually look for was invaluable. I went from confused to confident and landed multiple offers from top tech companies.",
       rating: 5,
     },
     {
-      name: "David Thompson",
-      role: "Product Manager at Meta",
+      name: "Ibrahim Hassan",
+      role: "Corporate Strategy at Dangote Group",
       image: "👨‍💻",
-      text: "Best investment in my career! The turnaround was quick and the final product exceeded my expectations. Got multiple job offers within a month.",
+      text: "Best career investment I've made! Vantage People's international standards approach helped me compete globally. Their strategic guidance is unmatched.",
       rating: 5,
     },
   ];
 
   const services = [
     {
-      icon: <FileText className="w-8 h-8" />,
-      title: "Professional Resume Writing",
+      icon: <User className="w-8 h-8" />,
+      title: "Vantage Career",
       description:
-        "Custom-crafted resumes tailored to your industry and career goals, optimized for ATS systems",
-      price: "$99",
+        "Empowering individuals with CV optimization, interview mastery, and strategic career guidance to compete globally",
     },
     {
-      icon: <Briefcase className="w-8 h-8" />,
-      title: "Executive CV Package",
+      icon: <Users className="w-8 h-8" />,
+      title: "Vantage HR",
       description:
-        "Premium service for senior professionals including cover letter and LinkedIn optimization",
-      price: "$199",
+        "Partnering with organizations to develop high-performing talent and build world-class teams",
     },
     {
-      icon: <Award className="w-8 h-8" />,
-      title: "Career Consultation",
+      icon: <Target className="w-8 h-8" />,
+      title: "Vantage Recruitment",
       description:
-        "One-on-one session with expert career coaches to align your CV with your career objectives",
-      price: "$149",
-    },
-    {
-      icon: <Zap className="w-8 h-8" />,
-      title: "Rush Delivery",
-      description:
-        "Need it fast? Get your professionally crafted resume within 12 hours",
-      price: "$79",
+        "Connecting exceptional Nigerian candidates with opportunity through strategic placement",
     },
   ];
 
@@ -119,9 +109,7 @@ export default function CVServiceLanding() {
 
   const scrollToForm = () => {
     setMobileMenuOpen(false);
-    document
-      .getElementById("request-form")
-      .scrollIntoView({ behavior: "smooth" });
+    document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" });
   };
 
   const scrollToSection = (id) => {
@@ -147,17 +135,18 @@ export default function CVServiceLanding() {
             <CheckCircle className="w-14 h-14 text-white" />
           </div>
           <h2 className="text-4xl font-bold text-gray-800 mb-4">
-            Request Received!
+            Welcome to Vantage People!
           </h2>
           <p className="text-lg text-gray-600 mb-8">
-            Thank you for choosing our professional CV building service. We'll
-            review your information and get back to you within 24 hours.
+            Thank you for taking the first step towards career clarity. Our team
+            will review your information and reach out within 24 hours to begin
+            your transformation journey.
           </p>
           <button
             onClick={() => setSubmitted(false)}
             className="bg-gradient-to-r from-cyan-500 to-blue-600 text-white px-8 py-3 rounded-full hover:shadow-lg transition-all text-lg font-medium"
           >
-            Submit Another Request
+            Return to Home
           </button>
         </div>
       </div>
@@ -166,35 +155,36 @@ export default function CVServiceLanding() {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-cyan-50">
-      {/* Top Contact Bar */}
       <div className="bg-gradient-to-r from-blue-900 to-blue-800 text-white py-3 px-4">
         <div className="max-w-7xl mx-auto flex justify-between items-center text-sm">
           <div className="flex items-center gap-2">
-            <Phone className="w-4 h-4" />
-            <span className="hidden sm:inline">Call Us: (252) 555-0126</span>
-            <span className="sm:hidden">(252) 555-0126</span>
+            <MapPin className="w-4 h-4" />
+            <span className="hidden sm:inline">
+              Nigeria's Premier Career Development Ecosystem
+            </span>
+            <span className="sm:hidden">Career Development</span>
           </div>
           <div className="flex items-center gap-2">
             <Mail className="w-4 h-4" />
-            <span className="hidden sm:inline">info@cvpro.com</span>
+            <span className="hidden sm:inline">
+              contact@vantagepeoplehq.com
+            </span>
           </div>
         </div>
       </div>
 
-      {/* Navigation */}
       <nav className="bg-white shadow-sm sticky top-0 z-50">
         <div className="max-w-7xl mx-auto px-4 py-4">
           <div className="flex justify-between items-center">
             <div className="flex items-center gap-2">
               <div className="w-10 h-10 bg-gradient-to-r from-cyan-500 to-blue-600 rounded-lg flex items-center justify-center">
-                <FileText className="w-6 h-6 text-white" />
+                <Briefcase className="w-6 h-6 text-white" />
               </div>
               <span className="text-2xl font-bold text-gray-800">
-                CV<span className="text-cyan-500">PRO</span>
+                Vantage<span className="text-cyan-500">People</span>
               </span>
             </div>
 
-            {/* Desktop Menu */}
             <div className="hidden md:flex items-center gap-8">
               <button
                 onClick={() => scrollToSection("home")}
@@ -236,7 +226,6 @@ export default function CVServiceLanding() {
                 Get Started
               </button>
 
-              {/* Mobile Menu Button */}
               <button
                 onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
                 className="md:hidden text-gray-700 hover:text-cyan-500 transition"
@@ -250,9 +239,8 @@ export default function CVServiceLanding() {
             </div>
           </div>
 
-          {/* Mobile Menu */}
           {mobileMenuOpen && (
-            <div className="md:hidden mt-4 pb-4 space-y-4 border-t pt-4 absolute bg-white right-0 left-0 px-8">
+            <div className="md:hidden mt-4 pb-4 space-y-4 border-t pt-4 absolute bg-white right-0 left-0 px-8 shadow-lg">
               <button
                 onClick={() => scrollToSection("home")}
                 className="block w-full text-left text-gray-700 hover:text-cyan-500 transition py-2"
@@ -294,40 +282,38 @@ export default function CVServiceLanding() {
         </div>
       </nav>
 
-      {/* Enhanced Hero Section */}
       <div
         id="home"
         className="relative overflow-hidden bg-gradient-to-br from-blue-900 via-blue-800 to-cyan-700"
       >
-        {/* Decorative Elements */}
         <div className="absolute inset-0 overflow-hidden">
           <div className="absolute top-20 left-10 w-72 h-72 bg-cyan-400 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-pulse"></div>
-          <div className="absolute top-40 right-10 w-96 h-96 bg-blue-400 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-pulse delay-1000"></div>
-          <div className="absolute -bottom-20 left-1/2 w-96 h-96 bg-purple-400 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-pulse delay-500"></div>
+          <div className="absolute top-40 right-10 w-96 h-96 bg-blue-400 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-pulse"></div>
+          <div className="absolute -bottom-20 left-1/2 w-96 h-96 bg-purple-400 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-pulse"></div>
         </div>
 
         <div className="max-w-7xl mx-auto px-4 py-20 md:py-32 relative z-10">
           <div className="grid md:grid-cols-2 gap-12 items-center">
-            {/* Left Content */}
             <div className="text-white">
               <div className="inline-flex items-center gap-2 bg-white bg-opacity-20 backdrop-blur-sm px-4 py-2 rounded-full mb-6">
                 <Sparkles className="w-4 h-4 text-yellow-300" />
                 <span className="text-sm font-medium">
-                  Trusted by 1.5K+ Professionals
+                  10+ Years Nigerian & International Banking Expertise
                 </span>
               </div>
 
-              <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
-                The{" "}
+              <h1 className="text-4xl md:text-6xl lg:text-5xl font-bold mb-6 leading-tight">
+                Career{" "}
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-300 to-blue-300">
-                  Resume
+                  Clarity.
                 </span>{" "}
-                to get your Dream job
+                Global Competitiveness.
               </h1>
 
-              <p className="text-xl md:text-2xl text-blue-100 mb-8 leading-relaxed">
-                Create an impressive resume professionally crafted for you.
-                Stand out from the competition and land interviews faster.
+              <p className="text-lg md:text-xl text-blue-100 mb-8 leading-relaxed">
+                Bridge the gap between academic excellence and career success.
+                Get the strategic guidance, insider knowledge, and international
+                standards that turn potential into achievement.
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4 mb-8">
@@ -335,14 +321,14 @@ export default function CVServiceLanding() {
                   onClick={scrollToForm}
                   className="group bg-gradient-to-r from-cyan-500 to-blue-600 text-white px-8 py-4 rounded-full text-lg font-semibold hover:shadow-2xl transition-all transform hover:scale-105 flex items-center justify-center gap-2"
                 >
-                  Request My Resume
+                  Get Started Today
                   <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                 </button>
                 <button
                   onClick={() => scrollToSection("services")}
                   className="bg-white bg-opacity-10 backdrop-blur-sm text-white px-8 py-4 rounded-full text-lg font-semibold hover:bg-opacity-20 transition-all border-2 border-white border-opacity-30"
                 >
-                  View Services
+                  Explore Services
                 </button>
               </div>
 
@@ -354,7 +340,7 @@ export default function CVServiceLanding() {
                     <div className="w-10 h-10 rounded-full bg-gradient-to-r from-yellow-400 to-orange-500 border-2 border-white"></div>
                   </div>
                   <span className="text-sm text-blue-100">
-                    5K+ Happy Clients
+                    Trusted by Nigerian Professionals
                   </span>
                 </div>
                 <div className="flex items-center gap-1">
@@ -365,15 +351,13 @@ export default function CVServiceLanding() {
                     />
                   ))}
                   <span className="text-sm text-blue-100 ml-2">
-                    4.9/5 Rating
+                    Banking, Consulting & Tech
                   </span>
                 </div>
               </div>
             </div>
 
-            {/* Right Content - Resume Mockups */}
             <div className="relative h-96 md:h-[600px]">
-              {/* Main Resume Card */}
               <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 md:w-80 z-30">
                 <div className="bg-white rounded-2xl shadow-2xl p-6 md:p-8 transform hover:scale-105 transition-all">
                   <div className="flex items-center gap-4 mb-6">
@@ -395,7 +379,6 @@ export default function CVServiceLanding() {
                 </div>
               </div>
 
-              {/* Background Resume Cards */}
               <div className="absolute top-1/4 left-0 w-56 md:w-64 z-20">
                 <div className="bg-white rounded-2xl shadow-xl p-6 transform -rotate-6 opacity-90">
                   <div className="space-y-2">
@@ -425,24 +408,18 @@ export default function CVServiceLanding() {
                 </div>
               </div>
 
-              {/* Floating Icons */}
               <div className="absolute top-10 right-10 w-12 h-12 bg-gradient-to-r from-yellow-400 to-orange-500 rounded-xl flex items-center justify-center shadow-lg animate-bounce z-40">
                 <Star className="w-6 h-6 text-white" />
               </div>
-              <div className="absolute bottom-10 left-10 w-12 h-12 bg-gradient-to-r from-green-400 to-blue-500 rounded-xl flex items-center justify-center shadow-lg animate-bounce delay-300 z-40">
+              <div className="absolute bottom-10 left-10 w-12 h-12 bg-gradient-to-r from-green-400 to-blue-500 rounded-xl flex items-center justify-center shadow-lg animate-bounce z-40">
                 <CheckCircle className="w-6 h-6 text-white" />
               </div>
             </div>
           </div>
         </div>
 
-        {/* Wave Separator */}
         <div className="absolute bottom-0 left-0 right-0">
-          <svg
-            viewBox="0 0 1440 120"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
+          <svg viewBox="0 0 1440 120" fill="none">
             <path
               d="M0 120L60 105C120 90 240 60 360 45C480 30 600 30 720 37.5C840 45 960 60 1080 67.5C1200 75 1320 75 1380 75L1440 75V120H1380C1320 120 1200 120 1080 120C960 120 840 120 720 120C600 120 480 120 360 120C240 120 120 120 60 120H0Z"
               fill="white"
@@ -456,89 +433,104 @@ export default function CVServiceLanding() {
         </div>
       </div>
 
-      {/* Features Section */}
       <div className="max-w-7xl mx-auto px-4 py-20">
+        <div className="text-center mb-12">
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
+            The Vantage Difference
+          </h2>
+          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+            What sets us apart in Nigeria's career development landscape
+          </p>
+        </div>
         <div className="grid md:grid-cols-3 gap-8">
           <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all">
             <div className="w-14 h-14 bg-gradient-to-r from-cyan-400 to-blue-500 rounded-xl flex items-center justify-center mb-4">
-              <Award className="w-8 h-8 text-white" />
+              <Target className="w-8 h-8 text-white" />
             </div>
             <h3 className="text-xl font-bold text-gray-800 mb-2">
-              Expert Writers
+              Clarity Over Confusion
             </h3>
             <p className="text-gray-600">
-              Professional CV writers with years of experience across multiple
-              industries
+              No vague motivational talk—just clear pathways to results backed
+              by proven frameworks
             </p>
           </div>
           <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all">
             <div className="w-14 h-14 bg-gradient-to-r from-purple-400 to-pink-500 rounded-xl flex items-center justify-center mb-4">
-              <Target className="w-8 h-8 text-white" />
+              <Award className="w-8 h-8 text-white" />
             </div>
             <h3 className="text-xl font-bold text-gray-800 mb-2">
-              ATS Optimized
+              International Standards
             </h3>
             <p className="text-gray-600">
-              Resumes designed to pass applicant tracking systems and reach
-              recruiters
+              UK, US, EU standards for Nigerian talent while understanding local
+              market realities
             </p>
           </div>
           <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all">
             <div className="w-14 h-14 bg-gradient-to-r from-orange-400 to-red-500 rounded-xl flex items-center justify-center mb-4">
-              <Clock className="w-8 h-8 text-white" />
+              <Zap className="w-8 h-8 text-white" />
             </div>
             <h3 className="text-xl font-bold text-gray-800 mb-2">
-              Fast Delivery
+              Insider Knowledge, Democratized
             </h3>
             <p className="text-gray-600">
-              Get your professionally crafted resume within 24-48 hours
+              We share strategies that traditionally stayed behind closed doors
+              in banking and consulting
             </p>
           </div>
         </div>
       </div>
 
-      {/* About Section */}
       <div id="about" className="bg-white py-20">
         <div className="max-w-7xl mx-auto px-4">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>
               <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-6">
-                About{" "}
+                Our{" "}
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-500 to-blue-600">
-                  CVPRO
+                  Story
                 </span>
               </h2>
               <p className="text-lg text-gray-600 mb-6">
-                We are a team of professional resume writers, career coaches,
-                and industry experts dedicated to helping job seekers land their
-                dream positions. With over 10 years of experience, we've helped
-                thousands of professionals across various industries achieve
-                their career goals.
+                Vantage People was born from a simple observation: talented
+                Nigerian graduates and professionals struggle not because they
+                lack ability, but because they lack clarity.
               </p>
-              <p className="text-lg text-gray-600 mb-8">
-                Our mission is to empower individuals by showcasing their unique
-                skills, experiences, and achievements in a way that captures the
-                attention of hiring managers and passes through automated
-                screening systems.
+              <p className="text-lg text-gray-600 mb-6">
+                Our founder spent over 10 years navigating the Nigerian and UK
+                banking industries—experiencing firsthand the gap between what
+                universities teach and what employers actually value.
               </p>
+              <div className="bg-gradient-to-r from-cyan-50 to-blue-50 border-l-4 border-cyan-500 p-6 mb-8 rounded-r-xl">
+                <p className="text-gray-700 italic">
+                  "Success isn't just about credentials—it's about knowing how
+                  to position yourself, articulate your value, and navigate the
+                  hidden curriculum of professional advancement."
+                </p>
+              </div>
               <div className="grid grid-cols-3 gap-6">
                 <div className="text-center">
                   <div className="text-4xl font-bold text-cyan-500 mb-2">
                     10+
                   </div>
-                  <div className="text-gray-600">Years Experience</div>
+                  <div className="text-gray-600 text-sm">
+                    Years Banking Expertise
+                  </div>
                 </div>
                 <div className="text-center">
                   <div className="text-4xl font-bold text-cyan-500 mb-2">
-                    5K+
+                    44%
                   </div>
-                  <div className="text-gray-600">Happy Clients</div>
+                  <div className="text-gray-600 text-sm">
+                    Graduates Need Clarity
+                  </div>
                 </div>
                 <div className="text-center">
-                  <div className="text-4xl font-bold text-cyan-500 mb-2">
-                    98%
+                  <div className="text-4xl font-bold text-cyan-500 mb-2">3</div>
+                  <div className="text-gray-600 text-sm">
+                    Integrated Platforms
                   </div>
-                  <div className="text-gray-600">Success Rate</div>
                 </div>
               </div>
             </div>
@@ -547,28 +539,31 @@ export default function CVServiceLanding() {
                 <div className="space-y-6">
                   <div className="flex items-start gap-4">
                     <div className="w-12 h-12 bg-gradient-to-r from-cyan-500 to-blue-600 rounded-lg flex items-center justify-center flex-shrink-0">
-                      <Users className="w-6 h-6 text-white" />
+                      <Target className="w-6 h-6 text-white" />
                     </div>
                     <div>
                       <h3 className="text-xl font-bold text-gray-800 mb-2">
-                        Expert Team
+                        Our Purpose
                       </h3>
                       <p className="text-gray-600">
-                        Certified professional resume writers and career
-                        consultants
+                        Bridge the gap between academic excellence and career
+                        success by providing the clarity, strategy, and insider
+                        knowledge needed to compete globally
                       </p>
                     </div>
                   </div>
                   <div className="flex items-start gap-4">
                     <div className="w-12 h-12 bg-gradient-to-r from-purple-500 to-pink-600 rounded-lg flex items-center justify-center flex-shrink-0">
-                      <Target className="w-6 h-6 text-white" />
+                      <Sparkles className="w-6 h-6 text-white" />
                     </div>
                     <div>
                       <h3 className="text-xl font-bold text-gray-800 mb-2">
-                        Industry Focus
+                        Our Vision
                       </h3>
                       <p className="text-gray-600">
-                        Specialized knowledge across 50+ industries and sectors
+                        To become Africa's most trusted career development
+                        ecosystem where every ambitious professional has access
+                        to world-class guidance
                       </p>
                     </div>
                   </div>
@@ -578,11 +573,11 @@ export default function CVServiceLanding() {
                     </div>
                     <div>
                       <h3 className="text-xl font-bold text-gray-800 mb-2">
-                        Proven Results
+                        Results Accountability
                       </h3>
                       <p className="text-gray-600">
-                        Track record of clients landing roles at Fortune 500
-                        companies
+                        We measure success by outcomes, not activity. Your
+                        career advancement is our metric
                       </p>
                     </div>
                   </div>
@@ -593,22 +588,21 @@ export default function CVServiceLanding() {
         </div>
       </div>
 
-      {/* Services Section */}
       <div id="services" className="py-20">
         <div className="max-w-7xl mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-4">
-              Our Services
+              Our Integrated Platforms
             </h2>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              Choose from our range of professional services designed to boost
-              your career
+              Three powerful services working together to transform your career
+              journey
             </p>
           </div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {services.map((service, index) => (
+          <div className="grid md:grid-cols-3 gap-8">
+            {services.map((service, idx) => (
               <div
-                key={index}
+                key={idx}
                 className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all group hover:-translate-y-2"
               >
                 <div className="w-16 h-16 bg-gradient-to-r from-cyan-400 to-blue-500 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform text-white">
@@ -618,24 +612,144 @@ export default function CVServiceLanding() {
                   {service.title}
                 </h3>
                 <p className="text-gray-600 mb-6">{service.description}</p>
-                <div className="flex items-center justify-between">
-                  {/* <span className="text-3xl font-bold text-cyan-500">
-                    {service.price}
-                  </span> */}
-                  {/* <button
-                    onClick={scrollToForm}
-                    className="text-cyan-500 hover:text-cyan-600 font-semibold"
-                  >
-                    Choose →
-                  </button> */}
-                </div>
               </div>
             ))}
           </div>
         </div>
       </div>
 
-      {/* Testimonials Section */}
+      <div className="bg-gradient-to-br from-gray-50 to-blue-50 py-20">
+        <div className="max-w-7xl mx-auto px-4">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-4">
+              Our Transformation Promise
+            </h2>
+            <p className="text-xl text-gray-600">
+              From confusion to clarity. From potential to performance.
+            </p>
+          </div>
+          <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto mb-16">
+            <div className="bg-white rounded-2xl p-8 shadow-lg border-2 border-red-100">
+              <div className="inline-block bg-red-100 text-red-600 px-4 py-2 rounded-full text-sm font-semibold mb-6">
+                BEFORE
+              </div>
+              <div className="space-y-4">
+                <div className="flex items-start gap-3">
+                  <div className="w-6 h-6 bg-red-100 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                    <span className="text-red-600 text-sm">✗</span>
+                  </div>
+                  <p className="text-gray-700">
+                    <span className="font-semibold">Feeling:</span> Clueless
+                    about converting qualifications to opportunities
+                  </p>
+                </div>
+                <div className="flex items-start gap-3">
+                  <div className="w-6 h-6 bg-red-100 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                    <span className="text-red-600 text-sm">✗</span>
+                  </div>
+                  <p className="text-gray-700">
+                    <span className="font-semibold">Held back by:</span> Lack of
+                    information and confidence
+                  </p>
+                </div>
+                <div className="flex items-start gap-3">
+                  <div className="w-6 h-6 bg-red-100 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                    <span className="text-red-600 text-sm">✗</span>
+                  </div>
+                  <p className="text-gray-700">
+                    Sending CVs with no responses, frustrated with unclear
+                    career direction
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div className="bg-white rounded-2xl p-8 shadow-lg border-2 border-green-100">
+              <div className="inline-block bg-green-100 text-green-600 px-4 py-2 rounded-full text-sm font-semibold mb-6">
+                AFTER
+              </div>
+              <div className="space-y-4">
+                <div className="flex items-start gap-3">
+                  <div className="w-6 h-6 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                    <span className="text-green-600 text-sm">✓</span>
+                  </div>
+                  <p className="text-gray-700">
+                    <span className="font-semibold">Now feeling:</span>{" "}
+                    Confident and ready for strategic action
+                  </p>
+                </div>
+                <div className="flex items-start gap-3">
+                  <div className="w-6 h-6 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                    <span className="text-green-600 text-sm">✓</span>
+                  </div>
+                  <p className="text-gray-700">
+                    <span className="font-semibold">What's possible:</span> Top
+                    companies, global competition, faster goals
+                  </p>
+                </div>
+                <div className="flex items-start gap-3">
+                  <div className="w-6 h-6 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                    <span className="text-green-600 text-sm">✓</span>
+                  </div>
+                  <p className="text-gray-700">
+                    Landing interviews at dream companies with clear positioning
+                    and insider knowledge
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className="bg-white rounded-2xl p-8 shadow-lg max-w-5xl mx-auto">
+            <h3 className="text-2xl font-bold text-gray-800 mb-6 text-center">
+              Who We Serve
+            </h3>
+            <p className="text-lg text-gray-600 text-center mb-8">
+              Ambitious Nigerian professionals who refuse to let confusion or
+              outdated advice limit their potential
+            </p>
+            <div className="grid md:grid-cols-4 gap-6">
+              <div className="text-center">
+                <div className="w-16 h-16 bg-gradient-to-r from-purple-400 to-pink-500 rounded-2xl flex items-center justify-center mx-auto mb-3">
+                  <User className="w-8 h-8 text-white" />
+                </div>
+                <h4 className="font-bold text-gray-800 mb-2">Students</h4>
+                <p className="text-sm text-gray-600">
+                  Final-year students preparing for the job market
+                </p>
+              </div>
+              <div className="text-center">
+                <div className="w-16 h-16 bg-gradient-to-r from-blue-400 to-cyan-500 rounded-2xl flex items-center justify-center mx-auto mb-3">
+                  <Briefcase className="w-8 h-8 text-white" />
+                </div>
+                <h4 className="font-bold text-gray-800 mb-2">Graduates</h4>
+                <p className="text-sm text-gray-600">
+                  Frustrated with lack of interview responses
+                </p>
+              </div>
+              <div className="text-center">
+                <div className="w-16 h-16 bg-gradient-to-r from-green-400 to-teal-500 rounded-2xl flex items-center justify-center mx-auto mb-3">
+                  <Target className="w-8 h-8 text-white" />
+                </div>
+                <h4 className="font-bold text-gray-800 mb-2">Professionals</h4>
+                <p className="text-sm text-gray-600">
+                  Seeking career transitions or advancement
+                </p>
+              </div>
+              <div className="text-center">
+                <div className="w-16 h-16 bg-gradient-to-r from-orange-400 to-red-500 rounded-2xl flex items-center justify-center mx-auto mb-3">
+                  <Users className="w-8 h-8 text-white" />
+                </div>
+                <h4 className="font-bold text-gray-800 mb-2">Organizations</h4>
+                <p className="text-sm text-gray-600">
+                  Companies building world-class talent pipelines
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
       <div
         id="testimonials"
         className="bg-gradient-to-br from-blue-900 to-blue-800 py-20"
@@ -646,8 +760,7 @@ export default function CVServiceLanding() {
               What Our Clients Say
             </h2>
             <p className="text-xl text-blue-200">
-              Join thousands of satisfied professionals who landed their dream
-              jobs
+              Join ambitious Nigerian professionals achieving their career goals
             </p>
           </div>
           <div className="relative bg-white rounded-3xl shadow-2xl p-8 md:p-12">
@@ -688,12 +801,12 @@ export default function CVServiceLanding() {
               </p>
             </div>
             <div className="flex justify-center gap-2 mt-8">
-              {testimonials.map((_, index) => (
+              {testimonials.map((_, idx) => (
                 <button
-                  key={index}
-                  onClick={() => setCurrentTestimonial(index)}
+                  key={idx}
+                  onClick={() => setCurrentTestimonial(idx)}
                   className={`w-3 h-3 rounded-full transition-all ${
-                    index === currentTestimonial
+                    idx === currentTestimonial
                       ? "bg-gradient-to-r from-cyan-500 to-blue-600 w-8"
                       : "bg-gray-300"
                   }`}
@@ -704,110 +817,113 @@ export default function CVServiceLanding() {
         </div>
       </div>
 
-      {/* Trust Badges */}
       <div className="py-20">
         <div className="max-w-7xl mx-auto px-4">
           <p className="text-center text-gray-500 mb-8 text-lg">
-            Our clients are employed by:
+            Our clients have secured roles at:
           </p>
           <div className="flex flex-wrap justify-center items-center gap-12 opacity-50">
-            <span className="text-3xl font-bold text-gray-400">Google</span>
-            <span className="text-3xl font-bold text-gray-400">Microsoft</span>
-            <span className="text-3xl font-bold text-gray-400">Amazon</span>
-            <span className="text-3xl font-bold text-gray-400">Meta</span>
-            <span className="text-3xl font-bold text-gray-400">Apple</span>
+            <span className="text-3xl font-bold text-gray-400">
+              Access Bank
+            </span>
+            <span className="text-3xl font-bold text-gray-400">PwC</span>
+            <span className="text-3xl font-bold text-gray-400">Deloitte</span>
+            <span className="text-3xl font-bold text-gray-400">
+              Flutterwave
+            </span>
+            <span className="text-3xl font-bold text-gray-400">Dangote</span>
           </div>
         </div>
       </div>
 
-      {/* Contact Section */}
       <div id="contact" className="bg-white py-20">
         <div className="max-w-7xl mx-auto px-4">
           <div className="grid md:grid-cols-2 gap-12">
             <div>
               <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-6">
-                Get In Touch
+                Ready to Transform Your Career?
               </h2>
               <p className="text-lg text-gray-600 mb-8">
-                Have questions? We're here to help! Reach out to us and we'll
-                get back to you as soon as possible.
+                Join ambitious Nigerian professionals who are taking control of
+                their career trajectory with clarity, strategy, and insider
+                knowledge.
               </p>
               <div className="space-y-6">
                 <div className="flex items-start gap-4">
                   <div className="w-12 h-12 bg-gradient-to-r from-cyan-500 to-blue-600 rounded-xl flex items-center justify-center flex-shrink-0">
-                    <Phone className="w-6 h-6 text-white" />
-                  </div>
-                  <div>
-                    <h3 className="text-lg font-bold text-gray-800 mb-1">
-                      Phone
-                    </h3>
-                    <p className="text-gray-600">(252) 555-0126</p>
-                    <p className="text-sm text-gray-500">Mon-Fri 9am-6pm EST</p>
-                  </div>
-                </div>
-                <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 bg-gradient-to-r from-purple-500 to-pink-600 rounded-xl flex items-center justify-center flex-shrink-0">
                     <Mail className="w-6 h-6 text-white" />
                   </div>
                   <div>
                     <h3 className="text-lg font-bold text-gray-800 mb-1">
-                      Email
+                      Email Us
                     </h3>
-                    <p className="text-gray-600">info@cvpro.com</p>
+                    <p className="text-gray-600">contact@vantagepeoplehq.com</p>
                     <p className="text-sm text-gray-500">
-                      We'll respond within 24 hours
+                      Get a response within 24 hours
                     </p>
                   </div>
                 </div>
                 <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 bg-gradient-to-r from-orange-500 to-red-600 rounded-xl flex items-center justify-center flex-shrink-0">
+                  <div className="w-12 h-12 bg-gradient-to-r from-purple-500 to-pink-600 rounded-xl flex items-center justify-center flex-shrink-0">
                     <MapPin className="w-6 h-6 text-white" />
                   </div>
                   <div>
                     <h3 className="text-lg font-bold text-gray-800 mb-1">
-                      Location
+                      Serving
                     </h3>
-                    <p className="text-gray-600">123 Career Avenue</p>
-                    <p className="text-gray-600">New York, NY 10001</p>
+                    <p className="text-gray-600">Nigerian Professionals</p>
+                    <p className="text-gray-600">Nationwide & Diaspora</p>
+                  </div>
+                </div>
+                <div className="flex items-start gap-4">
+                  <div className="w-12 h-12 bg-gradient-to-r from-orange-500 to-red-600 rounded-xl flex items-center justify-center flex-shrink-0">
+                    <Award className="w-6 h-6 text-white" />
+                  </div>
+                  <div>
+                    <h3 className="text-lg font-bold text-gray-800 mb-1">
+                      Our Promise
+                    </h3>
+                    <p className="text-gray-600">From Confusion to Clarity</p>
+                    <p className="text-gray-600">
+                      From Potential to Performance
+                    </p>
                   </div>
                 </div>
               </div>
             </div>
             <div className="bg-gradient-to-br from-cyan-50 to-blue-50 rounded-3xl p-8 shadow-xl">
               <h3 className="text-2xl font-bold text-gray-800 mb-6">
-                Send Us a Message
+                Get Started Today
               </h3>
               <div className="space-y-4">
-                <div>
-                  <input
-                    type="text"
-                    placeholder="Your Name"
-                    className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:ring-2 focus:ring-cyan-500 focus:border-transparent transition"
-                  />
-                </div>
-                <div>
-                  <input
-                    type="email"
-                    placeholder="Your Email"
-                    className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:ring-2 focus:ring-cyan-500 focus:border-transparent transition"
-                  />
-                </div>
-                <div>
-                  <input
-                    type="tel"
-                    placeholder="Phone Number"
-                    className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:ring-2 focus:ring-cyan-500 focus:border-transparent transition"
-                  />
-                </div>
-                <div>
-                  <textarea
-                    rows="4"
-                    placeholder="Your Message"
-                    className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:ring-2 focus:ring-cyan-500 focus:border-transparent transition"
-                  />
-                </div>
+                <input
+                  type="text"
+                  placeholder="Your Name"
+                  className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:ring-2 focus:ring-cyan-500 focus:border-transparent transition"
+                />
+                <input
+                  type="email"
+                  placeholder="Your Email"
+                  className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:ring-2 focus:ring-cyan-500 focus:border-transparent transition"
+                />
+                <input
+                  type="tel"
+                  placeholder="Phone Number"
+                  className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:ring-2 focus:ring-cyan-500 focus:border-transparent transition"
+                />
+                <select className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:ring-2 focus:ring-cyan-500 focus:border-transparent transition">
+                  <option value="">I'm interested in...</option>
+                  <option value="career">Vantage Career (Individual)</option>
+                  <option value="hr">Vantage HR (Organization)</option>
+                  <option value="recruitment">Vantage Recruitment</option>
+                </select>
+                <textarea
+                  rows="4"
+                  placeholder="Tell us about your career goals..."
+                  className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:ring-2 focus:ring-cyan-500 focus:border-transparent transition"
+                />
                 <button className="w-full bg-gradient-to-r from-cyan-500 to-blue-600 text-white py-4 rounded-xl font-semibold hover:shadow-lg transition-all flex items-center justify-center gap-2">
-                  Send Message
+                  Start Your Journey
                   <Send className="w-5 h-5" />
                 </button>
               </div>
@@ -816,20 +932,25 @@ export default function CVServiceLanding() {
         </div>
       </div>
 
-      {/* Request Form */}
-
-      {/* Footer */}
       <footer className="bg-gray-900 text-white py-12">
         <div className="max-w-7xl mx-auto px-4 text-center">
           <div className="flex items-center justify-center gap-2 mb-4">
             <div className="w-10 h-10 bg-gradient-to-r from-cyan-500 to-blue-600 rounded-lg flex items-center justify-center">
-              <FileText className="w-6 h-6 text-white" />
+              <Briefcase className="w-6 h-6 text-white" />
             </div>
             <span className="text-2xl font-bold">
-              CV<span className="text-cyan-400">PRO</span>
+              Vantage<span className="text-cyan-400">People</span>
             </span>
           </div>
-          <p className="text-gray-400 mb-4"></p>
+          <p className="text-gray-400 mb-2">
+            Career Clarity. Global Competitiveness.
+          </p>
+          <p className="text-gray-500 text-sm">
+            Nigeria's Premier Career Development Ecosystem
+          </p>
+          <p className="text-gray-600 text-sm mt-4">
+            © 2025 Vantage People. All rights reserved.
+          </p>
         </div>
       </footer>
     </div>
