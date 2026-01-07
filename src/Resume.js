@@ -21,6 +21,7 @@ import {
   ArrowRight,
   Sparkles,
 } from "lucide-react";
+import { Link } from "react-router-dom";
 
 export default function VantagePeopleLanding() {
   const [formData, setFormData] = useState({
@@ -941,6 +942,20 @@ export default function VantagePeopleLanding() {
           <p className="text-gray-600 text-sm mt-4">
             © 2025 Vantage People. All rights reserved.
           </p>
+          <div className="flex justify-center items-center gap-6 mt-6">
+            <Link
+              to="/privacy"
+              className="text-gray-500 hover:text-white text-sm"
+            >
+              Privacy Policy
+            </Link>
+            <Link
+              to="/terms"
+              className="text-gray-500 hover:text-white text-sm"
+            >
+              Terms of Service
+            </Link>
+          </div>
         </div>
       </footer>
     </div>
