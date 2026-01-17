@@ -36,6 +36,6 @@
         ".next/types/**/*.ts",
         "app/dashboard/core/product-management/products/_components/motor-detail",
         "app/dashboard/finance/receivables-payables/[id]/_components/SideProducttsx"
-    ],
+, "src/components/DecisionModal.jx"    ],
     "exclude": ["node_modules", "**/*.min.mjs"]
 }
