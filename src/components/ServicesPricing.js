@@ -10,8 +10,8 @@ export default function ServicesPricing({
     window.scrollTo(0, 0);
   });
   const [serviceType, setServiceType] = useState(null);
-  const [delivery, setDelivery] = useState(null);
-  const [tier, setTier] = useState(null);
+  const [, setDelivery] = useState(null);
+  const [, setTier] = useState(null);
 
   const cvReviewPricing = [
     {

@@ -6,7 +6,7 @@ function Footer() {
     <footer className="bg-gray-900 text-white py-12">
       <div className="max-w-7xl mx-auto px-4 text-center">
         <div className="flex items-center justify-center gap-2 mb-4">
-          <img src="/logo.png" className="h-[50px]" />
+          <img src="/logo.png" className="h-[50px]" alt="" />
         </div>
         <p className="text-gray-400 mb-2">
           Career Clarity. Global Competitiveness.
