@@ -3,31 +3,31 @@ import React, { useState } from "react";
 
 const testimonials = [
   {
-    name: "Chioma Adeleke",
-    role: "Investment Banking Analyst at Access Bank",
-    image: "👩‍💼",
-    text: "Vantage People gave me the clarity I needed to position myself competitively. Within 3 weeks of optimizing my CV and preparing with their frameworks, I secured my dream role in banking!",
+    name: "Rotimi Olagunju",
+    role: "Assistant Product Manager – Yorkshire Building Society – United Kingdom",
+    image: "",
+    text: "Working with Vantage People was a game-changer for my career transition. They didn't just optimize my CV, they completely transformed how I presented my experience and value proposition. The interview strategies they provided were incredibly practical and gave me the confidence I needed to stand out. I'm thrilled to say I secured my role as Assistant Product Manager, and I genuinely believe their guidance was instrumental in making that happen. Highly recommended for anyone serious about advancing their career.",
     rating: 5,
   },
   {
-    name: "Olumide Taiwo",
-    role: "Management Consultant at PwC Nigeria",
+    name: "Abiodun Ogundeji",
+    role: "Operations Specialist – Amazon United Kingdom",
     image: "👨‍💼",
-    text: "I was stuck with no interview responses despite a strong academic record. Vantage People taught me how to translate my achievements into professional value. Game changer!",
+    text: "The CV optimization service from Vantage People exceeded my expectations. They took the time to understand my operational expertise and restructured my CV to highlight my key achievements in a way that truly resonated with hiring managers. The transformation was remarkable—my CV went from being overlooked to opening doors. Their attention to detail and strategic approach made all the difference in how I present myself professionally.",
     rating: 5,
   },
   {
-    name: "Funke Okafor",
-    role: "Tech Product Manager at Flutterwave",
+    name: "Abdulrahman Naheelah",
+    role: "Network Engineer – United Bank for Africa",
     image: "👩‍💻",
-    text: "The insider knowledge they shared about what recruiters actually look for was invaluable. I went from confused to confident and landed multiple offers from top tech companies.",
+    text: "The CV optimization from Vantage People was exactly what I needed. They transformed how I present my networking expertise and technical achievements, making my CV far more competitive. Professional, efficient, and highly effective.",
     rating: 5,
   },
   {
-    name: "Ibrahim Hassan",
-    role: "Corporate Strategy at Dangote Group",
+    name: "Wunmi Olagunju",
+    role: "Graduate",
     image: "👨‍💻",
-    text: "Best career investment I've made! Vantage People's international standards approach helped me compete globally. Their strategic guidance is unmatched.",
+    text: "As a recent graduate, I struggled to get my CV noticed by employers. Vantage People completely changed that. They optimized my CV to highlight my strengths, academic achievements, and transferable skills in a way that finally got attention. Since working with them, I've been getting interviews—something that wasn't happening before. I'm confident that landing my first role is just around the corner, and I have their expertise to thank for it.",
     rating: 5,
   },
 ];
@@ -39,7 +39,7 @@ function TestimonialSection() {
 
   const prevTestimonial = () => {
     setCurrentTestimonial(
-      (prev) => (prev - 1 + testimonials.length) % testimonials.length
+      (prev) => (prev - 1 + testimonials.length) % testimonials.length,
     );
   };
   return (
@@ -81,10 +81,10 @@ function TestimonialSection() {
                       key={i}
                       className="w-6 h-6 text-yellow-400 fill-current"
                     />
-                  )
+                  ),
                 )}
               </div>
-              <p className="text-xl text-gray-700 mb-8 italic">
+              <p className="lg:text-xl text-gray-700 mb-8 italic">
                 "{testimonials[currentTestimonial].text}"
               </p>
               <h4 className="text-2xl font-bold text-gray-800">

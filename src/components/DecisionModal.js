@@ -29,8 +29,9 @@ export default function DecisionModal({
           </p>
 
           <div className="grid md:grid-cols-2 gap-6">
-            <button
-              onClick={onTakeAssessment}
+            <a
+              href="https://forms.gle/HbTsQxEyRTFDEto66"
+              target="_blank"
               className="group relative bg-gradient-to-br from-blue-50 to-cyan-50 border-2 border-blue-200 rounded-2xl p-8 hover:border-blue-400 hover:shadow-xl transition-all text-left"
             >
               <div className="absolute top-4 right-4 w-12 h-12 bg-gradient-to-r from-cyan-400 to-blue-500 rounded-full flex items-center justify-center transform group-hover:scale-110 transition-transform">
@@ -47,7 +48,7 @@ export default function DecisionModal({
               <div className="text-blue-600 font-semibold group-hover:translate-x-2 transition-transform inline-block">
                 Start Assessment →
               </div>
-            </button>
+            </a>
 
             <button
               onClick={onViewServices}
