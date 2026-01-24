@@ -106,13 +106,17 @@ export default function TierConfirmation({
   const checkPaymentStatus = async (reference) => {
     try {
       const response = await fetch(
-        `http://localhost:3000/api/payment/verify/${reference}`,
+        `http://vantage.aoudit.com/api/payment/verify/${reference}`,
       );
       const data = await response.json();
 
-      if (data.success) {
+      if (
+        data.success ||
+        data.data.status === "success" ||
+        data.data.status === "failed"
+      ) {
         // Payment successful - redirect to success page
-        window.location.href = `http://localhost:3001/payment-successful?trxref=${reference}&reference=${reference}`;
+        window.location.href = `https://vantagepeoplehq.vercel.app/payment-successful?trxref=${reference}&reference=${reference}`;
         return true;
       }
       return false;
