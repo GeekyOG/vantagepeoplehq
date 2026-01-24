@@ -14,7 +14,10 @@ class PaymentManager {
 
       const data = await response.json();
 
-      if (data.success) {
+      if (
+        data.success &&
+        (data.data.status === "success" || data.data.status === "failed")
+      ) {
         this.currentReference = data.data.reference;
         return data.data;
       } else {
