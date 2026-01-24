@@ -9,7 +9,7 @@ function Header({
 }) {
   return (
     <div>
-      {/* <div className="bg-gradient-to-r from-blue-900 to-blue-800 relative text-white py-3 px-4">
+      <div className="bg-gradient-to-r from-blue-900 to-blue-800 relative text-white py-3 px-4">
         <div className="max-w-7xl mx-auto flex justify-between items-center text-sm">
           <div className="flex items-center gap-2">
             <MapPin className="w-4 h-4" />
@@ -25,7 +25,7 @@ function Header({
             </span>
           </div>
         </div>
-      </div> */}
+      </div>
 
       <nav className=" bg-white border-b right-0 left-0  fixed shadow-sm  top-0 z-50">
         <div className="max-w-7xl mx-auto px-4 py-4">
