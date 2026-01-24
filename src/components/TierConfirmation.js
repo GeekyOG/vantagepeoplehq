@@ -111,9 +111,8 @@ export default function TierConfirmation({
       const data = await response.json();
 
       if (
-        data.success ||
-        data.data.status === "success" ||
-        data.data.status === "failed"
+        data.success &&
+        (data.data.status === "success" || data.data.status === "failed")
       ) {
         // Payment successful - redirect to success page
         window.location.href = `https://vantagepeoplehq.vercel.app/payment-successful?trxref=${reference}&reference=${reference}`;
