@@ -106,7 +106,7 @@ export default function TierConfirmation({
   const checkPaymentStatus = async (reference) => {
     try {
       const response = await fetch(
-        `http://vantage.aoudit.com/api/payment/verify/${reference}`,
+        `https://vantage.aoudit.com/api/payment/verify/${reference}`,
       );
       const data = await response.json();
 
