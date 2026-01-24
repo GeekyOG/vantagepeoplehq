@@ -10,7 +10,6 @@ import Header from "./components/Header";
 import DecisionModal from "./components/DecisionModal";
 import ServicesPricing from "./components/ServicesPricing";
 import TierConfirmation from "./components/TierConfirmation";
-import ThankYouPage from "./components/ThankYouPage";
 
 export default function VantagePeopleLanding() {
   const [formData, setFormData] = useState({
@@ -80,21 +79,6 @@ export default function VantagePeopleLanding() {
     document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
   };
 
-  // Step 6: Thank You Page - Shows after payment
-  if (submitted) {
-    return (
-      <ThankYouPage
-        onReturn={() => {
-          setSubmitted(false);
-          setCurrentStep("home");
-          setSelectedService(null);
-          setSelectedDelivery(null);
-          setSelectedTier(null);
-        }}
-      />
-    );
-  }
-
   // Step 4: Tier Confirmation - Shows after service selection
   if (currentStep === "tier-confirmation") {
     return (
@@ -103,8 +87,6 @@ export default function VantagePeopleLanding() {
         delivery={selectedDelivery}
         tier={selectedTier}
         onConfirm={() => {
-          // In production, this would redirect to Paystack
-          // For now, we'll simulate payment success
           setCurrentStep("payment");
           setTimeout(() => setSubmitted(true), 1000);
         }}

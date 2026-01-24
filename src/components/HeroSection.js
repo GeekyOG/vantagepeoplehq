@@ -19,7 +19,7 @@ function HeroSection({ scrollToForm, scrollToSection }) {
             <div className="inline-flex items-center gap-2 bg-white bg-opacity-20 backdrop-blur-sm px-4 py-2 rounded-full mb-6">
               <Sparkles className="w-4 h-4 text-yellow-300" />
               <span className="text-sm font-medium">
-                10+ Years Nigerian & International Banking Expertise
+                10+ Years Providing Professional Services
               </span>
             </div>
 
