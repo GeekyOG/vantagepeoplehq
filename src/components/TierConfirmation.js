@@ -67,9 +67,11 @@ export default function TierConfirmation({
 
     if (!formData.phone.trim()) {
       errors.phone = "Phone number is required";
-    } else if (!/^[\d\s\+\-\(\)]+$/.test(formData.phone)) {
-      errors.phone = "Invalid phone number format";
     }
+
+    // else if (!/^[\d\s\+\-\(\)]+$/.test(formData.phone)) {
+    //   errors.phone = "Invalid phone number format";
+    // }
 
     setFormErrors(errors);
     return Object.keys(errors).length === 0;
