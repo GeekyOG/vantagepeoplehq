@@ -28,7 +28,7 @@ export default function VantagePeopleLanding() {
     additionalInfo: "",
   });
 
-  const [submitted, setSubmitted] = useState(false);
+  const [, setSubmitted] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [showDecisionModal, setShowDecisionModal] = useState(false);
   const [currentStep, setCurrentStep] = useState("home");
