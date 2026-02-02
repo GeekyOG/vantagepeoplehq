@@ -116,16 +116,19 @@ function TestimonialSection() {
           <p className="text-center text-gray-500 mb-8 text-lg">
             Our clients have secured roles at:
           </p>
-          <div className="flex flex-wrap justify-center items-center gap-12 opacity-50">
-            <span className="text-3xl font-bold text-gray-400">
+          <div className="flex flex-wrap justify-center items-center gap-8 lg:gap-12 opacity-50">
+            <span className=" text-center text-2xl lg:text-3xl font-bold text-gray-400">
+              Amazon
+            </span>
+            <span className=" text-center text-2xl lg:text-3xl font-bold text-gray-400">
+              United Bank for Africa
+            </span>
+            <span className=" text-center text-2xl lg:text-3xl font-bold text-gray-400">
+              Yorkshire Building Society
+            </span>
+            <span className=" text-center text-2xl lg:text-3xl font-bold text-gray-400">
               Access Bank
             </span>
-            <span className="text-3xl font-bold text-gray-400">PwC</span>
-            <span className="text-3xl font-bold text-gray-400">Deloitte</span>
-            <span className="text-3xl font-bold text-gray-400">
-              Flutterwave
-            </span>
-            <span className="text-3xl font-bold text-gray-400">Dangote</span>
           </div>
         </div>
       </div>

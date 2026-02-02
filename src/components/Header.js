@@ -1,5 +1,6 @@
-import { Mail, MapPin, Menu, X } from "lucide-react";
-import React from "react";
+import { Mail, MapPin, Menu, X, ChevronDown } from "lucide-react";
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
 
 function Header({
   scrollToForm,
@@ -7,9 +8,11 @@ function Header({
   setMobileMenuOpen,
   mobileMenuOpen,
 }) {
+  const [partnershipDropdownOpen, setPartnershipDropdownOpen] = useState(false);
+
   return (
     <div>
-      <div className="bg-gradient-to-r from-blue-900 to-blue-800 relative text-white py-3 px-4">
+      {/* <div className="bg-gradient-to-r from-blue-900 to-blue-800 relative text-white py-3 px-4">
         <div className="max-w-7xl mx-auto flex justify-between items-center text-sm">
           <div className="flex items-center gap-2">
             <MapPin className="w-4 h-4" />
@@ -25,13 +28,15 @@ function Header({
             </span>
           </div>
         </div>
-      </div>
+      </div> */}
 
       <nav className=" bg-white border-b right-0 left-0  fixed shadow-sm  top-0 z-50">
         <div className="max-w-7xl mx-auto px-4 py-4">
           <div className="flex justify-between items-center">
             <div className="flex items-center gap-2">
-              <img src="/logo.png" className="h-[50px] invert" alt="logo" />
+              <Link to={"/"}>
+                <img src="/logo.png" className="h-[50px] invert" alt="logo" />
+              </Link>
             </div>
 
             <div className="hidden md:flex items-center gap-8">
@@ -53,6 +58,41 @@ function Header({
               >
                 Services
               </button>
+
+              {/* Partnership Dropdown */}
+              <div className="relative">
+                <button
+                  onClick={() =>
+                    setPartnershipDropdownOpen(!partnershipDropdownOpen)
+                  }
+                  onMouseEnter={() => setPartnershipDropdownOpen(true)}
+                  className="text-neutral-600 font-[600] hover:scale-[1.1] transition flex items-center gap-1"
+                >
+                  Partnerships
+                  <ChevronDown
+                    className={`w-4 h-4 transition-transform ${partnershipDropdownOpen ? "rotate-180" : ""}`}
+                  />
+                </button>
+
+                {partnershipDropdownOpen && (
+                  <div
+                    className="absolute top-full left-0 mt-2 bg-white rounded-lg shadow-xl border border-gray-100 py-2 min-w-[250px] z-50"
+                    onMouseLeave={() => setPartnershipDropdownOpen(false)}
+                  >
+                    <Link
+                      to="/partnership/nysc-corpers"
+                      className="block px-6 py-3 text-gray-700 hover:bg-gradient-to-r hover:from-cyan-50 hover:to-blue-50 hover:text-cyan-600 transition-all font-medium"
+                    >
+                      <div className="font-semibold">NYSC Corpers Program</div>
+                      <div className="text-xs text-gray-500 mt-1">
+                        Professional CV & LinkedIn - ₦10,000
+                      </div>
+                    </Link>
+                    {/* Add more partnership items here in the future */}
+                  </div>
+                )}
+              </div>
+
               <button
                 onClick={() => scrollToSection("testimonials")}
                 className="text-neutral-600 font-[600] hover:scale-[1.1] transition"
@@ -108,6 +148,23 @@ function Header({
               >
                 Services
               </button>
+
+              {/* Mobile Partnership Dropdown */}
+              <div className="border-l-4 border-cyan-500 pl-4">
+                <div className="font-semibold text-gray-900 mb-2">
+                  Partnerships
+                </div>
+                <Link
+                  to="/partnership/nysc-corpers"
+                  className="block py-2 text-gray-700 hover:text-cyan-600 transition"
+                >
+                  <div className="font-medium">NYSC Corpers Program</div>
+                  <div className="text-xs text-gray-500">
+                    CV & LinkedIn - ₦10,000
+                  </div>
+                </Link>
+              </div>
+
               <button
                 onClick={() => scrollToSection("testimonials")}
                 className="block w-full text-left text-gray-700 hover:scale-[1.2] transition py-2"

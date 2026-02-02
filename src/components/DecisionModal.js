@@ -1,16 +1,11 @@
 import { X, FileText, ShoppingBag } from "lucide-react";
 
-export default function DecisionModal({
-  isOpen,
-  onClose,
-  onTakeAssessment,
-  onViewServices,
-}) {
+export default function DecisionModal({ isOpen, onClose, onViewServices }) {
   if (!isOpen) return null;
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black bg-opacity-50 backdrop-blur-sm">
-      <div className="bg-white rounded-3xl shadow-2xl max-w-2xl w-full relative overflow-hidden">
+      <div className="bg-white rounded-3xl mt-[50px] shadow-2xl max-w-2xl w-full relative overflow-hidden">
         <div className="absolute top-0 left-0 right-0 h-2 bg-gradient-to-r from-cyan-500 to-blue-600"></div>
 
         <button

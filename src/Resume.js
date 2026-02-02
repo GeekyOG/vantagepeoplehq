@@ -38,18 +38,21 @@ export default function VantagePeopleLanding() {
 
   const services = [
     {
+      comingSoon: false,
       icon: <User className="w-8 h-8" />,
       title: "Vantage Career",
       description:
         "Empowering individuals with CV optimization, interview mastery, and strategic career guidance to compete globally",
     },
     {
+      comingSoon: true,
       icon: <Users className="w-8 h-8" />,
       title: "Vantage HR",
       description:
         "Partnering with organizations to develop high-performing talent and build world-class teams",
     },
     {
+      comingSoon: true,
       icon: <Target className="w-8 h-8" />,
       title: "Vantage Recruitment",
       description:

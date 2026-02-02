@@ -28,7 +28,7 @@ export default function ThankYouPage() {
 
         // Verify payment with backend
         const response = await fetch(
-          `https://vantage.aoudit.com/api/payment/verify/${reference}`,
+          `http://localhost:3000/api/payment/verify/${reference}`,
         );
         const data = await response.json();
 
@@ -197,25 +197,25 @@ export default function ThankYouPage() {
                 <div className="space-y-2 text-sm">
                   <div className="flex justify-between">
                     <span className="text-gray-600">Reference:</span>
-                    <span className="font-mono font-semibold text-gray-800">
+                    <span className="font-mono text-[0.75rem] font-semibold text-gray-800">
                       {paymentData.reference}
                     </span>
                   </div>
                   <div className="flex justify-between">
                     <span className="text-gray-600">Amount:</span>
-                    <span className="font-semibold text-gray-800">
+                    <span className="text-[0.75rem] font-semibold text-gray-800">
                       ₦{(paymentData.amount / 100).toLocaleString()}
                     </span>
                   </div>
                   <div className="flex justify-between">
                     <span className="text-gray-600">Payment Method:</span>
-                    <span className="font-semibold text-gray-800 capitalize">
+                    <span className="text-[0.75rem] font-semibold text-gray-800 capitalize">
                       {paymentData.channel || "Card"}
                     </span>
                   </div>
                   <div className="flex justify-between">
                     <span className="text-gray-600">Date:</span>
-                    <span className="font-semibold text-gray-800">
+                    <span className="text-[0.75rem] font-semibold text-gray-800">
                       {paymentData.paid_at
                         ? new Date(paymentData.paid_at).toLocaleString()
                         : new Date().toLocaleString()}
@@ -226,7 +226,7 @@ export default function ThankYouPage() {
             )}
 
             <div className="text-center mb-8">
-              <p className="text-xl text-gray-700 mb-6">
+              <p className="lg:text-xl text-gray-700 mb-6">
                 Your payment has been processed successfully. Here's what
                 happens next:
               </p>

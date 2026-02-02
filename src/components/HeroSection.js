@@ -13,7 +13,7 @@ function HeroSection({ scrollToForm, scrollToSection }) {
         <div className="absolute -bottom-20 left-1/2 w-96 h-96 bg-purple-400 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-pulse"></div>
       </div>
 
-      <div className="max-w-7xl mx-auto px-4 py-20 md:py-32 relative z-10">
+      <div className="max-w-7xl mt-10 lg:mt-0 mx-auto px-4 py-20 md:py-32 relative z-10">
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <div className="text-white">
             <div className="inline-flex items-center gap-2 bg-white bg-opacity-20 backdrop-blur-sm px-4 py-2 rounded-full mb-6">

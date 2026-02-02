@@ -19,17 +19,37 @@ export default function ServicesPricing({
       timeline: "48 hours",
       icon: <Clock className="w-5 h-5" />,
       tiers: [
-        { name: "Standard", price: "₦8,000", original: null },
-        { name: "Professional", price: "₦15,000", original: null },
+        {
+          name: "Standard",
+          years: "0–5 years",
+          price: "₦8,000",
+          original: null,
+        },
+        {
+          name: "Professional",
+          years: "5+ years",
+          price: "₦15,000",
+          original: null,
+        },
       ],
     },
     {
-      delivery: "Rush",
+      delivery: "Priority",
       timeline: "24 hours",
       icon: <Zap className="w-5 h-5" />,
       tiers: [
-        { name: "Standard", price: "₦10,000", original: null },
-        { name: "Professional", price: "₦18,000", original: null },
+        {
+          name: "Standard",
+          years: "0–5 years",
+          price: "₦10,000",
+          original: null,
+        },
+        {
+          name: "Professional",
+          years: "5+ years",
+          price: "₦18,000",
+          original: null,
+        },
       ],
     },
     {
@@ -37,8 +57,18 @@ export default function ServicesPricing({
       timeline: "8-12 hours",
       icon: <Rocket className="w-5 h-5" />,
       tiers: [
-        { name: "Standard", price: "₦15,000", original: null },
-        { name: "Professional", price: "₦19,999", original: null },
+        {
+          name: "Standard",
+          years: "0–5 years",
+          price: "₦15,000",
+          original: null,
+        },
+        {
+          name: "Professional",
+          years: "5+ years",
+          price: "₦19,999",
+          original: null,
+        },
       ],
     },
   ];
@@ -51,7 +81,7 @@ export default function ServicesPricing({
       price: "₦10,000",
     },
     {
-      delivery: "Rush",
+      delivery: "Priority",
       timeline: "3 days",
       icon: <Zap className="w-5 h-5" />,
       price: "₦12,000",
@@ -180,24 +210,26 @@ export default function ServicesPricing({
                           onClick={() => handleSelect(option, tierOption)}
                           className="group bg-gradient-to-br from-blue-50 to-cyan-50 rounded-2xl p-6 border-2 border-blue-200 hover:border-blue-400 hover:shadow-xl transition-all text-left"
                         >
-                          <div className="flex justify-between items-start mb-4">
-                            <div>
-                              <h4 className="text-xl font-bold text-gray-800 mb-2">
-                                {tierOption.name} Tier
-                              </h4>
-                              {tierOption.original && (
-                                <p className="text-gray-400 line-through text-sm">
-                                  {tierOption.original}
-                                </p>
-                              )}
-                              <p className="text-3xl font-bold text-blue-600">
-                                {tierOption.price}
+                          <div>
+                            <h4 className="text-xl font-bold text-gray-800 mb-1">
+                              {tierOption.name} Tier
+                            </h4>
+
+                            <p className="text-sm text-gray-500 mb-2">
+                              {tierOption.years}
+                            </p>
+
+                            {tierOption.original && (
+                              <p className="text-gray-400 line-through text-sm">
+                                {tierOption.original}
                               </p>
-                            </div>
-                            <div className="w-10 h-10 bg-blue-600 rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
-                              <CheckCircle className="w-6 h-6 text-white" />
-                            </div>
+                            )}
+
+                            <p className="text-3xl font-bold text-blue-600">
+                              {tierOption.price}
+                            </p>
                           </div>
+
                           <div className="text-blue-600 font-semibold">
                             Select →
                           </div>

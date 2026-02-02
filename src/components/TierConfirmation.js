@@ -106,7 +106,7 @@ export default function TierConfirmation({
   const checkPaymentStatus = async (reference) => {
     try {
       const response = await fetch(
-        `https://vantage.aoudit.com/api/payment/verify/${reference}`,
+        `http://localhost:3000/api/payment/verify/${reference}`,
       );
       const data = await response.json();
 
@@ -149,7 +149,7 @@ export default function TierConfirmation({
 
       const paymentResponse = await paymentManager.initiate(paymentData);
 
-      paymentManager.trackAbandonmentOnExit();
+      // paymentManager.trackAbandonmentOnExit();
 
       window.open(paymentResponse.authorization_url, "_blank");
 

@@ -6,6 +6,7 @@ import Terms from "./Terms";
 import Privacy from "./Privacy";
 import ScrollToTop from "./ScrollToTop";
 import ThankYouPage from "./components/ThankYouPage";
+import PartnershipPage from "./components/PartnerShip";
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
       <ScrollToTop />
       <Routes>
         <Route path="/" element={<CVServiceLanding />} />
+        <Route path="/partnership/nysc-corpers" element={<PartnershipPage />} />
         <Route path="/payment-successful" element={<ThankYouPage />} />
         <Route path="/terms" element={<Terms />} />
         <Route path="/privacy" element={<Privacy />} />
