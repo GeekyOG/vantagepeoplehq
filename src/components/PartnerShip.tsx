@@ -28,9 +28,9 @@ export default function PartnershipPage() {
     experience: "",
   });
 
-  const [submitted, setSubmitted] = useState(false);
+  const [, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
-  const [error, setError] = useState("");
+  const [, setError] = useState("");
 
   const checkPaymentStatus = async (reference) => {
     try {
