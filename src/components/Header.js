@@ -1,4 +1,4 @@
-import { Mail, MapPin, Menu, X, ChevronDown } from "lucide-react";
+import { Menu, X, ChevronDown } from "lucide-react";
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
