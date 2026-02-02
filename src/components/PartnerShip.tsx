@@ -1,23 +1,15 @@
 import React, { useState } from "react";
 import {
-  Sparkles,
   CheckCircle,
-  Clock,
-  Shield,
   ArrowRight,
   Mail,
-  Phone,
   Users,
   Award,
-  TrendingUp,
   FileText,
   Linkedin,
-  Target,
   Zap,
   ChevronRight,
-  Star,
   Lock,
-  Send,
   Loader2,
 } from "lucide-react";
 import { Link } from "react-router-dom";
