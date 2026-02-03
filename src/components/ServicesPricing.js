@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { ArrowLeft, CheckCircle, Clock, Zap, Rocket } from "lucide-react";
+import { CheckCircle, Clock, Zap, Rocket, ChevronLeft } from "lucide-react";
 
 export default function ServicesPricing({
   selectedService,
@@ -106,7 +106,7 @@ export default function ServicesPricing({
             onClick={onBack}
             className="flex items-center gap-2 text-blue-600 hover:text-blue-700 mb-8 transition-colors"
           >
-            <ArrowLeft className="w-5 h-5" />
+            <ChevronLeft size={24} />
             Back to Home
           </button>
         )}
@@ -170,7 +170,7 @@ export default function ServicesPricing({
               }}
               className="flex items-center gap-2 text-blue-600 hover:text-blue-700 mb-8 transition-colors"
             >
-              <ArrowLeft className="w-5 h-5" />
+              <ChevronLeft size={24} />
               Back
             </button>
 

@@ -4,18 +4,18 @@ export default function DecisionModal({ isOpen, onClose, onViewServices }) {
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black bg-opacity-50 backdrop-blur-sm">
-      <div className="bg-white rounded-3xl mt-[50px] shadow-2xl max-w-2xl w-full relative overflow-hidden">
+    <div className="fixed inset-0 h-[100vh] overflow-scroll z-50 flex items-center justify-center p-4 bg-black bg-opacity-50 backdrop-blur-sm">
+      <div className="bg-white mt-[100px] rounded-3xl  shadow-2xl max-w-2xl w-full relative overflow-hidden">
         <div className="absolute top-0 left-0 right-0 h-2 bg-gradient-to-r from-cyan-500 to-blue-600"></div>
 
         <button
           onClick={onClose}
-          className="absolute top-4 right-4 text-gray-400 hover:text-gray-600 transition-colors"
+          className="absolute top-4 bg-slate-600 flex items-center justify-center h-[34px] w-[34px] rounded-[50%] right-4 text-white  transition-colors"
         >
           <X className="w-6 h-6" />
         </button>
 
-        <div className="p-8 md:p-12">
+        <div className="p-8 md:p-12 mt-6">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4 text-center">
             How would you like to proceed?
           </h2>

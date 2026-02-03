@@ -69,6 +69,15 @@ export default function PartnershipPage() {
 
     setLoading(true);
     setError("");
+    const paymentWindow = window.open("", "_blank");
+
+    const checkIfClosed = setInterval(() => {
+      if (!paymentWindow || paymentWindow.closed) {
+        paymentManager.trackAbandonmentOnExit();
+        clearInterval(checkIfClosed);
+        setLoading(false);
+      }
+    }, 1000);
 
     try {
       // Prepare payment data
@@ -88,8 +97,12 @@ export default function PartnershipPage() {
 
       //   paymentManager.trackAbandonmentOnExit();
 
-      window.open(paymentResponse.authorization_url, "_blank");
-
+      if (paymentWindow) {
+        paymentWindow.location.href = paymentResponse.authorization_url;
+      } else {
+        // fallback (very rare)
+        window.location.href = paymentResponse.authorization_url;
+      }
       // Start checking payment status after 10 seconds
       setTimeout(() => {
         checkPaymentStatus(paymentResponse.reference);
@@ -111,6 +124,9 @@ export default function PartnershipPage() {
         setLoading(false);
       }, 300000);
     } catch (err) {
+      if (paymentWindow) {
+        paymentWindow.close();
+      }
       setError(
         err.message || "Failed to initialize payment. Please try again.",
       );
@@ -200,7 +216,7 @@ export default function PartnershipPage() {
       />
 
       {/* Hero Section */}
-      <section className="relative overflow-hidden py-20 md:py-32">
+      <section className="relative overflow-hidden py-20 md:py-32 pt-[120px]">
         {/* Background Elements */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
           <div className="absolute top-20 left-10 w-96 h-96 bg-cyan-300 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-pulse"></div>
@@ -208,7 +224,7 @@ export default function PartnershipPage() {
         </div>
 
         <div className="max-w-7xl mx-auto px-4 relative z-10">
-          <div className="grid md:grid-cols-2 gap-12 items-center">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
             {/* Left Content */}
             <div>
               <div className="inline-flex items-center gap-2 bg-cyan-100 px-4 py-2 rounded-full mb-6">
@@ -218,7 +234,7 @@ export default function PartnershipPage() {
                 </span>
               </div>
 
-              <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-gray-900 mb-6 md:leading-tight">
+              <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-gray-900 mb-6 lg:leading-tight">
                 Launch Your Career with{" "}
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-500 to-blue-600">
                   Confidence
@@ -245,7 +261,7 @@ export default function PartnershipPage() {
                 </p>
               </div>
 
-              <div className="flex flex-col sm:flex-row gap-4 mb-8">
+              <div className="flex flex-col md:flex-row gap-4 mb-8">
                 <button
                   onClick={() =>
                     document

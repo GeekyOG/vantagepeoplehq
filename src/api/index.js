@@ -26,15 +26,13 @@ class PaymentManager {
     }
   }
 
-  // trackAbandonmentOnExit() {
-  //   window.addEventListener("beforeunload", () => {
-  //     if (this.currentReference) {
-  //       navigator.sendBeacon(
-  //         `${this.baseUrl}/mark-abandoned/${this.currentReference}`,
-  //       );
-  //     }
-  //   });
-  // }
+  trackAbandonmentOnExit() {
+    if (this.currentReference) {
+      navigator.sendBeacon(
+        `${this.baseUrl}/mark-abandoned/${this.currentReference}`,
+      );
+    }
+  }
 }
 
 export const paymentManager = new PaymentManager();

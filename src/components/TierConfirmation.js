@@ -1,5 +1,4 @@
 import {
-  ArrowLeft,
   CheckCircle,
   Clock,
   CreditCard,
@@ -8,6 +7,7 @@ import {
   Mail,
   Phone,
   Loader2,
+  ChevronLeft,
 } from "lucide-react";
 import { useEffect, useState } from "react";
 import { paymentManager } from "../api";
@@ -133,8 +133,20 @@ export default function TierConfirmation({
     setLoading(true);
     setError("");
 
+    const paymentWindow = window.open("", "_blank");
+
+    const checkIfClosed = setInterval(async () => {
+      if (!paymentWindow || paymentWindow.closed) {
+        console.log("closed");
+
+        await paymentManager.trackAbandonmentOnExit();
+        clearInterval(checkIfClosed);
+        setLoading(false);
+      } else {
+        console.log("openes");
+      }
+    }, 1000);
     try {
-      // Prepare payment data
       const paymentData = {
         email: formData.email,
         name: formData.name,
@@ -149,16 +161,18 @@ export default function TierConfirmation({
 
       const paymentResponse = await paymentManager.initiate(paymentData);
 
-      // paymentManager.trackAbandonmentOnExit();
-
-      window.open(paymentResponse.authorization_url, "_blank");
+      if (paymentWindow) {
+        paymentWindow.location.href = paymentResponse.authorization_url;
+      } else {
+        // fallback (very rare)
+        window.location.href = paymentResponse.authorization_url;
+      }
 
       // Start checking payment status after 10 seconds
       setTimeout(() => {
         checkPaymentStatus(paymentResponse.reference);
       }, 10000);
 
-      // Continue checking every 5 seconds for up to 5 minutes
       const checkInterval = setInterval(async () => {
         const isSuccessful = await checkPaymentStatus(
           paymentResponse.reference,
@@ -168,12 +182,15 @@ export default function TierConfirmation({
         }
       }, 5000);
 
-      // Stop checking after 5 minutes
       setTimeout(() => {
         clearInterval(checkInterval);
         setLoading(false);
       }, 300000);
     } catch (err) {
+      if (paymentWindow) {
+        paymentWindow.close();
+      }
+
       setError(
         err.message || "Failed to initialize payment. Please try again.",
       );
@@ -183,12 +200,12 @@ export default function TierConfirmation({
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-cyan-50 flex items-center justify-center p-4">
-      <div className="max-w-2xl w-full">
+      <div className="max-w-2xl w-full pt-5">
         <button
           onClick={onBack}
-          className="flex items-center gap-2 text-blue-600 hover:text-blue-700 mb-8 transition-colors"
+          className="flex font-[600] items-center gap-2 text-blue-600 hover:text-blue-700 mb-8 transition-colors"
         >
-          <ArrowLeft className="w-5 h-5" />
+          <ChevronLeft size={24} />
           Back to Services
         </button>
 
@@ -272,8 +289,8 @@ export default function TierConfirmation({
 
       {/* Payment Details Modal */}
       {showModal && (
-        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-50 animate-fadeIn">
-          <div className="bg-white rounded-3xl shadow-2xl max-w-md w-full transform transition-all animate-slideUp">
+        <div className="fixed h-[100vh] overflow-scroll  inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-50 animate-fadeIn">
+          <div className="bg-white mt-[100px] rounded-3xl  shadow-2xl max-w-2xl w-full relative overflow-hidden">
             {/* Modal Header */}
             <div className="bg-gradient-to-r from-cyan-500 to-blue-600 p-6 text-white rounded-t-3xl flex items-center justify-between">
               <h3 className="text-2xl font-bold">Payment Details</h3>

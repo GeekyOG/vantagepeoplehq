@@ -40,14 +40,14 @@ function HeroSection({ scrollToForm, scrollToSection }) {
             <div className="flex flex-col sm:flex-row gap-4 mb-8">
               <button
                 onClick={scrollToForm}
-                className="group bg-gradient-to-r text-[0.75rem] from-cyan-500 to-blue-600 text-white px-8 py-4 rounded-full lg:text-lg font-semibold hover:shadow-2xl transition-all transform hover:scale-105 flex items-center justify-center gap-2"
+                className="group bg-gradient-to-r md:text-[0.75rem] from-cyan-500 to-blue-600 text-white px-8 py-4 rounded-full lg:text-lg font-semibold hover:shadow-2xl transition-all transform hover:scale-105 flex items-center justify-center gap-2"
               >
                 Get Started Today
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </button>
               <button
                 onClick={() => scrollToSection("services")}
-                className="bg-white  text-[0.75rem] bg-opacity-10 backdrop-blur-sm text-white px-8 py-4 rounded-full lg:text-lg font-semibold hover:bg-opacity-20 transition-all border-2 border-white border-opacity-30"
+                className="bg-white md:text-[0.75rem] bg-opacity-10 backdrop-blur-sm text-white px-8 py-4 rounded-full lg:text-lg font-semibold hover:bg-opacity-20 transition-all border-2 border-white border-opacity-30"
               >
                 Explore Services
               </button>
