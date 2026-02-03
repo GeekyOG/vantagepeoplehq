@@ -23,7 +23,7 @@ function HeroSection({ scrollToForm, scrollToSection }) {
               </span>
             </div>
 
-            <h1 className="text-4xl md:text-6xl lg:text-5xl font-bold mb-6 leading-tight">
+            <h1 className="text-4xl md:text-5xl lg:text-5xl font-bold mb-6 leading-tight">
               Career{" "}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-300 to-blue-300">
                 Clarity.
@@ -40,14 +40,14 @@ function HeroSection({ scrollToForm, scrollToSection }) {
             <div className="flex flex-col sm:flex-row gap-4 mb-8">
               <button
                 onClick={scrollToForm}
-                className="group bg-gradient-to-r from-cyan-500 to-blue-600 text-white px-8 py-4 rounded-full text-lg font-semibold hover:shadow-2xl transition-all transform hover:scale-105 flex items-center justify-center gap-2"
+                className="group bg-gradient-to-r text-[0.75rem] from-cyan-500 to-blue-600 text-white px-8 py-4 rounded-full lg:text-lg font-semibold hover:shadow-2xl transition-all transform hover:scale-105 flex items-center justify-center gap-2"
               >
                 Get Started Today
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </button>
               <button
                 onClick={() => scrollToSection("services")}
-                className="bg-white bg-opacity-10 backdrop-blur-sm text-white px-8 py-4 rounded-full text-lg font-semibold hover:bg-opacity-20 transition-all border-2 border-white border-opacity-30"
+                className="bg-white  text-[0.75rem] bg-opacity-10 backdrop-blur-sm text-white px-8 py-4 rounded-full lg:text-lg font-semibold hover:bg-opacity-20 transition-all border-2 border-white border-opacity-30"
               >
                 Explore Services
               </button>

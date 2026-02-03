@@ -9,7 +9,7 @@ function AboutSection() {
           <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
             The Vantage Difference
           </h2>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+          <p className="lg:text-lg text-gray-600 max-w-2xl mx-auto">
             What sets us apart in Nigeria's career development landscape
           </p>
         </div>
@@ -63,12 +63,12 @@ function AboutSection() {
                   Story
                 </span>
               </h2>
-              <p className="text-lg text-gray-600 mb-6">
+              <p className="lg:text-lg text-gray-600 mb-6">
                 Vantage People was born from a simple observation: talented
                 Nigerian graduates and professionals struggle not because they
                 lack ability, but because they lack clarity.
               </p>
-              <p className="text-lg text-gray-600 mb-6">
+              <p className="lg:text-lg text-gray-600 mb-6">
                 Our founder spent over 10 years navigating the Nigerian and UK
                 banking industries—experiencing firsthand the gap between what
                 universities teach and what employers actually value.

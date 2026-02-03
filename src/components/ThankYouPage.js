@@ -28,7 +28,7 @@ export default function ThankYouPage() {
 
         // Verify payment with backend
         const response = await fetch(
-          `http://localhost:3000/api/payment/verify/${reference}`,
+          `https://vantage.aoudit.com/api/payment/verify/${reference}`,
         );
         const data = await response.json();
 

@@ -1,12 +1,12 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import "./App.css";
 
-import CVServiceLanding from "./Resume";
-import Terms from "./Terms";
-import Privacy from "./Privacy";
-import ScrollToTop from "./ScrollToTop";
+import CVServiceLanding from "./pages/Resume";
+import Terms from "./pages/Terms";
+import Privacy from "./pages/Privacy";
+import ScrollToTop from "./utils/ScrollToTop";
 import ThankYouPage from "./components/ThankYouPage";
-import PartnershipPage from "./components/PartnerShip";
+import PartnershipPage from "./pages/PartnerShip";
 
 function App() {
   return (

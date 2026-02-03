@@ -12,9 +12,10 @@ import {
   Lock,
   Loader2,
 } from "lucide-react";
-import { Link } from "react-router-dom";
 import { paymentManager } from "../api";
-import Footer from "./Footer";
+import Footer from "../components/Footer";
+import Header from "../components/Header";
+import { useNavigate } from "react-router-dom";
 
 export default function PartnershipPage() {
   const [formData, setFormData] = useState({
@@ -35,7 +36,7 @@ export default function PartnershipPage() {
   const checkPaymentStatus = async (reference) => {
     try {
       const response = await fetch(
-        `http://localhost:3000/api/payment/verify/${reference}`,
+        `https://vantage.aoudit.com/api/payment/verify/${reference}`,
       );
       const data = await response.json();
 
@@ -171,68 +172,32 @@ export default function PartnershipPage() {
     { number: "100%", label: "Satisfaction" },
   ];
 
-  //   if (submitted) {
-  //     return (
-  //       <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-cyan-50 flex items-center justify-center p-4">
-  //         <div className="bg-white rounded-3xl shadow-2xl p-12 max-w-2xl w-full text-center">
-  //           <div className="w-32 h-32 bg-gradient-to-r from-cyan-400 to-blue-500 rounded-full flex items-center justify-center mx-auto mb-8 relative">
-  //             <CheckCircle className="w-16 h-16 text-white" />
-  //             <div className="absolute inset-0 bg-gradient-to-r from-cyan-400 to-blue-500 rounded-full animate-ping opacity-20"></div>
-  //           </div>
-  //           <h2 className="text-5xl font-bold text-gray-900 mb-6">
-  //             You're All Set! 🎉
-  //           </h2>
-  //           <p className="text-xl text-gray-600 mb-4">
-  //             Your payment has been confirmed. Check your email for next steps.
-  //           </p>
-  //           <p className="text-lg text-gray-500 mb-8">
-  //             We'll send you a detailed form to complete your CV and LinkedIn
-  //             profile. Expect your professional package within 72 hours.
-  //           </p>
-  //           <div className="bg-cyan-50 rounded-2xl p-6 mb-8">
-  //             <p className="text-cyan-700 font-medium">
-  //               📧 Confirmation email sent to:{" "}
-  //               <span className="font-bold">{formData.email}</span>
-  //             </p>
-  //           </div>
-  //           <button
-  //             onClick={() => setSubmitted(false)}
-  //             className="bg-gradient-to-r from-cyan-500 to-blue-600 text-white px-8 py-4 rounded-full hover:shadow-lg transition-all text-lg font-semibold"
-  //           >
-  //             Back to Home
-  //           </button>
-  //         </div>
-  //       </div>
-  //     );
-  //   }
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
+  const navigate = useNavigate();
+  const scrollToForm = () => {
+    setMobileMenuOpen(false);
+    document
+      .getElementById("payment-form")
+      ?.scrollIntoView({ behavior: "smooth" });
+  };
+
+  const scrollToSection = (id) => {
+    setMobileMenuOpen(false);
+    navigate(`/?scrollTo=${id}`);
+
+    document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
+  };
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-cyan-50">
       {/* Navigation */}
-      <nav className="bg-white shadow-sm sticky top-0 z-50 backdrop-blur-sm bg-opacity-95">
-        <div className="max-w-7xl mx-auto px-4 py-4">
-          <div className="flex justify-between items-center">
-            <div className="flex items-center gap-3">
-              <div>
-                <Link to={"/"}>
-                  <img src="/logo.png" className="h-[50px] invert" alt="logo" />
-                </Link>{" "}
-              </div>
-            </div>
-            <button
-              onClick={() =>
-                document
-                  .getElementById("payment-form")
-                  ?.scrollIntoView({ behavior: "smooth" })
-              }
-              className="bg-gradient-to-r from-cyan-500 to-blue-600 text-white px-6 py-3 rounded-full hover:shadow-lg transition-all font-semibold text-sm md:text-base flex items-center gap-2"
-            >
-              Get Started
-              <ArrowRight className="w-4 h-4" />
-            </button>
-          </div>
-        </div>
-      </nav>
+      <Header
+        scrollToForm={scrollToForm}
+        scrollToSection={scrollToSection}
+        mobileMenuOpen={mobileMenuOpen}
+        setMobileMenuOpen={setMobileMenuOpen}
+      />
 
       {/* Hero Section */}
       <section className="relative overflow-hidden py-20 md:py-32">
@@ -253,7 +218,7 @@ export default function PartnershipPage() {
                 </span>
               </div>
 
-              <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-gray-900 mb-6 leading-tight">
+              <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-gray-900 mb-6 md:leading-tight">
                 Launch Your Career with{" "}
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-500 to-blue-600">
                   Confidence
@@ -274,7 +239,7 @@ export default function PartnershipPage() {
                 <p className="text-gray-600">
                   We're helping corps members like you stand out in today's
                   competitive job market—starting at just{" "}
-                  <span className="font-bold text-3xl text-cyan-600">
+                  <span className="font-bold text-[1.25rem] md:text-3xl text-cyan-600">
                     ₦10,000
                   </span>
                 </p>
@@ -287,7 +252,7 @@ export default function PartnershipPage() {
                       .getElementById("payment-form")
                       ?.scrollIntoView({ behavior: "smooth" })
                   }
-                  className="group bg-gradient-to-r from-cyan-500 to-blue-600 text-white px-8 py-5 rounded-full text-lg font-bold hover:shadow-2xl transition-all transform hover:scale-105 flex items-center justify-center gap-2"
+                  className="group bg-gradient-to-r from-cyan-500 to-blue-600 text-white px-8 py-5 rounded-full lg:text-lg font-bold hover:shadow-2xl transition-all transform hover:scale-105 flex items-center justify-center gap-2"
                 >
                   Get Started Now
                   <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
@@ -298,7 +263,7 @@ export default function PartnershipPage() {
                       .getElementById("how-it-works")
                       ?.scrollIntoView({ behavior: "smooth" })
                   }
-                  className="bg-white text-cyan-600 px-8 py-5 rounded-full text-lg font-bold hover:shadow-lg transition-all border-2 border-cyan-200"
+                  className="bg-white text-cyan-600 px-8 py-5 rounded-full lg:text-lg font-bold hover:shadow-lg transition-all border-2 border-cyan-200"
                 >
                   Learn More
                 </button>
@@ -333,7 +298,7 @@ export default function PartnershipPage() {
 
               {/* Floating Badge */}
               <div className="absolute -top-6 -right-6 bg-gradient-to-r from-orange-400 to-red-500 text-white px-6 py-3 rounded-full shadow-2xl transform rotate-12 animate-pulse">
-                <span className="font-bold text-lg">Save ₦15,000!</span>
+                <span className="font-bold lg:text-lg">Save ₦15,000!</span>
               </div>
             </div>
           </div>
@@ -426,7 +391,7 @@ export default function PartnershipPage() {
                   <h3 className="text-2xl font-bold text-gray-900 mb-3">
                     {step.title}
                   </h3>
-                  <p className="text-gray-600 text-lg">{step.description}</p>
+                  <p className="text-gray-600 lg:text-lg">{step.description}</p>
                 </div>
                 {index < steps.length - 1 && (
                   <div className="hidden md:block absolute top-1/2 -right-4 transform -translate-y-1/2">
@@ -500,7 +465,7 @@ export default function PartnershipPage() {
           <div className="bg-white rounded-3xl shadow-2xl p-8 md:p-12">
             <div className="bg-gradient-to-r from-cyan-500 to-blue-600 text-white rounded-2xl p-6 mb-8 text-center">
               <div className="text-xl lg:text-5xl font-bold mb-2">₦10,000</div>
-              <div className="lg:text-lg">Complete Professional Package</div>
+              <div className="lg:lg:text-lg">Complete Professional Package</div>
             </div>
 
             <form onSubmit={handleSubmit} className="space-y-6">

@@ -1,15 +1,16 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { User, Target, Users } from "lucide-react";
-import HeroSection from "./components/HeroSection";
-import AboutSection from "./components/AboutSection";
-import ServiceSection from "./components/ServiceSection";
-import Footer from "./components/Footer";
-import Contact from "./components/Contact";
-import TestimonialSection from "./components/TestimonialSection";
-import Header from "./components/Header";
-import DecisionModal from "./components/DecisionModal";
-import ServicesPricing from "./components/ServicesPricing";
-import TierConfirmation from "./components/TierConfirmation";
+import HeroSection from "../components/HeroSection";
+import AboutSection from "../components/AboutSection";
+import ServiceSection from "../components/ServiceSection";
+import Footer from "../components/Footer";
+import Contact from "../components/Contact";
+import TestimonialSection from "../components/TestimonialSection";
+import Header from "../components/Header";
+import DecisionModal from "../components/DecisionModal";
+import ServicesPricing from "../components/ServicesPricing";
+import TierConfirmation from "../components/TierConfirmation";
+import { useSearchParams } from "react-router-dom";
 
 export default function VantagePeopleLanding() {
   const [formData, setFormData] = useState({
@@ -81,6 +82,15 @@ export default function VantagePeopleLanding() {
     setMobileMenuOpen(false);
     document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
   };
+
+  const [searchParams] = useSearchParams();
+  const scrollTo = searchParams.get("scrollTo");
+
+  useEffect(() => {
+    if (scrollTo) {
+      document.getElementById(scrollTo)?.scrollIntoView({ behavior: "smooth" });
+    }
+  }, [scrollTo]);
 
   // Step 4: Tier Confirmation - Shows after service selection
   if (currentStep === "tier-confirmation") {

@@ -22,12 +22,14 @@ function ServiceSection({ services }) {
                 className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all group hover:-translate-y-2"
               >
                 <div className="flex justify-between items-start">
-                  <div className="w-16 h-16 bg-gradient-to-r from-cyan-400 to-blue-500 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform text-white">
+                  <div className="lg:w-16 lg:h-16 h-12 w-12 bg-gradient-to-r from-cyan-400 to-blue-500 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform text-white">
                     {service.icon}
                   </div>
                   {service.comingSoon && (
                     <div className="bg-red-300 px-3 py-1 text-white rounded-md">
-                      <p className="text-[0.865rem] font-[600]">Coming Soon</p>
+                      <p className="text-[0.75rem] lg:text-[0.865rem]font-[600]">
+                        Coming Soon
+                      </p>
                     </div>
                   )}
                 </div>
