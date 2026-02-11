@@ -79,22 +79,24 @@ function HeroSection({ scrollToForm, scrollToSection }) {
           </div>
 
           <div className="relative h-96 md:h-[600px]">
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 md:w-80 z-30">
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 md:w-80 z-30 hover:z-50">
               <div className="bg-white rounded-2xl shadow-2xl p-6 md:p-8 transform hover:scale-105 transition-all">
-                <div className="flex items-center gap-4 mb-6">
-                  <div className="w-16 h-16 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full"></div>
-                  <div className="flex-1">
-                    <div className="h-3 bg-gray-800 rounded w-3/4 mb-2"></div>
-                    <div className="h-2 bg-gray-300 rounded w-1/2"></div>
-                  </div>
-                </div>
                 <div className="space-y-3">
-                  <div className="h-2 bg-gray-200 rounded w-full"></div>
-                  <div className="h-2 bg-gray-200 rounded w-5/6"></div>
-                  <div className="h-2 bg-gray-200 rounded w-4/6"></div>
-                  <div className="mt-4 pt-4 border-t border-gray-200">
-                    <div className="h-2 bg-purple-200 rounded w-3/4 mb-2"></div>
-                    <div className="h-2 bg-purple-200 rounded w-2/3"></div>
+                  <div className=" rounded w-full flex flex-col gap-2">
+                    <p className="text-[0.65rem]">
+                      600,000 graduates enter Nigeria's job market every year,
+                      creating intense competition for opportunities
+                    </p>
+                    <p className="text-[0.65rem]">
+                      Source: University World News, 2024
+                    </p>
+                    <p className="text-[0.65rem]">
+                      70% of Nigerian employers report difficulty finding
+                      qualified candidates due to skills mismatch
+                    </p>
+                    <p className="text-[0.65rem]">
+                      Source: MyJobMag Insights, 2024
+                    </p>
                   </div>
                 </div>
               </div>
@@ -102,20 +104,6 @@ function HeroSection({ scrollToForm, scrollToSection }) {
 
             <div className="absolute top-1/4 left-0 w-56 md:w-64 z-20">
               <div className="bg-white rounded-2xl shadow-xl p-6 transform -rotate-6 opacity-90">
-                <div className="space-y-2">
-                  <div className="h-3 bg-blue-900 rounded w-3/4"></div>
-                  <div className="h-2 bg-gray-300 rounded w-full"></div>
-                  <div className="h-2 bg-gray-300 rounded w-5/6"></div>
-                  <div className="mt-4 space-y-1">
-                    <div className="h-2 bg-gray-200 rounded w-full"></div>
-                    <div className="h-2 bg-gray-200 rounded w-4/5"></div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div className="absolute bottom-1/4 right-0 w-56 md:w-64 z-20">
-              <div className="bg-white rounded-2xl shadow-xl p-6 transform rotate-6 opacity-90">
                 <div className="space-y-2">
                   <div className="h-3 bg-cyan-500 rounded w-2/3"></div>
                   <div className="h-2 bg-gray-300 rounded w-full"></div>
@@ -125,6 +113,18 @@ function HeroSection({ scrollToForm, scrollToSection }) {
                     <div className="h-2 bg-gray-200 rounded"></div>
                     <div className="h-2 bg-gray-200 rounded"></div>
                   </div>
+                </div>
+              </div>
+            </div>
+
+            <div className="absolute bottom-1/4 right-0 w-56 md:w-64 z-30">
+              <div className="bg-white rounded-2xl shadow-xl p-6 transform rotate-6 opacity-100">
+                <div className="space-y-2">
+                  <p className="text-[0.65rem]">
+                    Companies like Amazon, Google, Meta, Stripe, and GitLab
+                    actively hire Nigerian professionals remotely for tech and
+                    non-tech roles Source: Remote Job Reports, 2025
+                  </p>
                 </div>
               </div>
             </div>
