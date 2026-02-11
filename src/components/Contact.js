@@ -26,7 +26,7 @@ function Contact() {
 
     try {
       const response = await fetch(
-        "http://vantage.aoudit.com/api/contact/send-email",
+        "https://vantage.aoudit.com/api/contact/send-email",
         {
           method: "POST",
           headers: {
