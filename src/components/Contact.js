@@ -116,7 +116,7 @@ function Contact() {
                   </h3>
                   <p className="text-gray-600">From Confusion to Clarity</p>
                   <p className="text-gray-600">
-                    fFom Potential to Professional Success
+                    From Potential to Professional Success
                   </p>
                 </div>
               </div>

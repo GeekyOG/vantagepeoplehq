@@ -79,26 +79,11 @@ function HeroSection({ scrollToForm, scrollToSection }) {
           </div>
 
           <div className="relative h-96 md:h-[600px]">
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 md:w-80 z-30">
-              <div className="bg-white rounded-2xl shadow-2xl p-6 md:p-8 transform hover:scale-105 transition-all">
-                <div className="flex items-center gap-4 mb-6">
-                  <div className="w-16 h-16 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full"></div>
-                  <div className="flex-1">
-                    <div className="h-3 bg-gray-800 rounded w-3/4 mb-2"></div>
-                    <div className="h-2 bg-gray-300 rounded w-1/2"></div>
-                  </div>
-                </div>
-                <div className="space-y-3">
-                  <div className="h-2 bg-gray-200 rounded w-full"></div>
-                  <div className="h-2 bg-gray-200 rounded w-5/6"></div>
-                  <div className="h-2 bg-gray-200 rounded w-4/6"></div>
-                  <div className="mt-4 pt-4 border-t border-gray-200">
-                    <div className="h-2 bg-purple-200 rounded w-3/4 mb-2"></div>
-                    <div className="h-2 bg-purple-200 rounded w-2/3"></div>
-                  </div>
-                </div>
-              </div>
-            </div>
+            <img
+              src="./cv.png"
+              alt="CV Example"
+              className="w-full h-full object-contain  relative z-30 "
+            />
 
             <div className="absolute top-1/4 left-0 w-56 md:w-64 z-20">
               <div className="bg-white rounded-2xl shadow-xl p-6 transform -rotate-6 opacity-90">

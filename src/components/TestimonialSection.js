@@ -30,6 +30,13 @@ const testimonials = [
     text: "As a recent graduate, I struggled to get my CV noticed by employers. Vantage People completely changed that. They optimized my CV to highlight my strengths, academic achievements, and transferable skills in a way that finally got attention. Since working with them, I've been getting interviews—something that wasn't happening before. I'm confident that landing my first role is just around the corner, and I have their expertise to thank for it.",
     rating: 5,
   },
+  {
+    name: "Bukola",
+    role: "Graduate",
+    image: "👩‍💼",
+    text: "Working with Vantage People was the breakthrough I needed to scale my virtual assistant career internationally. They didn't just help me refine my CV and LinkedIn profile, they completely repositioned how I communicated my value to clients abroad. The strategies they provided on how to price my value, structure my service packages, and presente myself as a strategic partner rather than just a task executor were game-changing. Within two months of implementing their guidance, I secured three retainer clients in the diaspora and now earn entirely in dollars while working from Nigeria. I'm finally building the international career I always knew was possible.",
+    rating: 5,
+  },
 ];
 function TestimonialSection() {
   const [currentTestimonial, setCurrentTestimonial] = useState(0);

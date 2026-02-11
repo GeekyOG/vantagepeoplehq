@@ -63,9 +63,11 @@ function AboutSection() {
                 </span>
               </h2>
               <p className="lg:text-lg text-gray-600 mb-6">
-                Vantage People was born from a simple observation: talented
-                Nigerian graduates and professionals struggle not because they
-                lack ability, but because they lack clarity.
+                Vantage People was born from a simple reality: talented Nigerian
+                graduates and professionals struggle not because they lack
+                ability, but because they lack clarity. In Nigeria's
+                increasingly competitive job market, where 600,000 graduates
+                enter annually, success requires expert guidance, not guesswork.
               </p>
               <p className="lg:text-lg text-gray-600 mb-6">
                 Our founder spent over 10 years navigating the Nigerian and UK
