@@ -131,8 +131,8 @@ function ServiceSection({ services }) {
               Who We Serve
             </h3>
             <p className="text-lg text-gray-600 text-center mb-8">
-              Ambitious Nigerian professionals who refuse to let confusion or
-              outdated advice limit their potential
+              Ambitious professionals who demand clarity, expert guidance, and
+              career strategies that actually work
             </p>
             <div className="grid md:grid-cols-4 gap-6">
               <div className="text-center">

@@ -19,7 +19,7 @@ function HeroSection({ scrollToForm, scrollToSection }) {
             <div className="inline-flex items-center gap-2 bg-white bg-opacity-20 backdrop-blur-sm px-4 py-2 rounded-full mb-6">
               <Sparkles className="w-4 h-4 text-yellow-300" />
               <span className="text-sm font-medium">
-                10+ Years Providing Professional Services
+                10+ years of providing
               </span>
             </div>
 
@@ -32,9 +32,9 @@ function HeroSection({ scrollToForm, scrollToSection }) {
             </h1>
 
             <p className="text-lg md:text-xl text-blue-100 mb-8 leading-relaxed">
-              Bridge the gap between academic excellence and career success. Get
-              the strategic guidance, insider knowledge, and international
-              standards that turn potential into achievement.
+              Your qualifications got you this far. Strategic career guidance
+              gets you even further. Expert positioning, insider knowledge, and
+              international standards that turn applications into interviews.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 mb-8">

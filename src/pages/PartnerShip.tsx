@@ -36,7 +36,7 @@ export default function PartnershipPage() {
   const checkPaymentStatus = async (reference) => {
     try {
       const response = await fetch(
-        `https://vantage.aoudit.com/api/payment/verify/${reference}`,
+        `http://vantage.aoudit.com/api/payment/verify/${reference}`,
       );
       const data = await response.json();
 

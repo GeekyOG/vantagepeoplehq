@@ -1,5 +1,5 @@
 class PaymentManager {
-  constructor(baseUrl = "https://vantage.aoudit.com/api/payment") {
+  constructor(baseUrl = "http://vantage.aoudit.com/api/payment") {
     this.baseUrl = baseUrl;
     this.currentReference = null;
   }

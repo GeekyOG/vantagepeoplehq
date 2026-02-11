@@ -3,28 +3,28 @@ import React, { useState } from "react";
 
 const testimonials = [
   {
-    name: "Rotimi Olagunju",
+    name: "Rotimi",
     role: "Assistant Product Manager – Yorkshire Building Society – United Kingdom",
     image: "",
     text: "Working with Vantage People was a game-changer for my career transition. They didn't just optimize my CV, they completely transformed how I presented my experience and value proposition. The interview strategies they provided were incredibly practical and gave me the confidence I needed to stand out. I'm thrilled to say I secured my role as Assistant Product Manager, and I genuinely believe their guidance was instrumental in making that happen. Highly recommended for anyone serious about advancing their career.",
     rating: 5,
   },
   {
-    name: "Abiodun Ogundeji",
+    name: "Abiodun",
     role: "Operations Specialist – Amazon United Kingdom",
     image: "👨‍💼",
     text: "The CV optimization service from Vantage People exceeded my expectations. They took the time to understand my operational expertise and restructured my CV to highlight my key achievements in a way that truly resonated with hiring managers. The transformation was remarkable—my CV went from being overlooked to opening doors. Their attention to detail and strategic approach made all the difference in how I present myself professionally.",
     rating: 5,
   },
   {
-    name: "Abdulrahman Naheelah",
+    name: "Abdulrahman",
     role: "Network Engineer – United Bank for Africa",
     image: "👩‍💻",
     text: "The CV optimization from Vantage People was exactly what I needed. They transformed how I present my networking expertise and technical achievements, making my CV far more competitive. Professional, efficient, and highly effective.",
     rating: 5,
   },
   {
-    name: "Wunmi Olagunju",
+    name: "Wunmi",
     role: "Graduate",
     image: "👨‍💻",
     text: "As a recent graduate, I struggled to get my CV noticed by employers. Vantage People completely changed that. They optimized my CV to highlight my strengths, academic achievements, and transferable skills in a way that finally got attention. Since working with them, I've been getting interviews—something that wasn't happening before. I'm confident that landing my first role is just around the corner, and I have their expertise to thank for it.",

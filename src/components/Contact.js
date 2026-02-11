@@ -1,7 +1,71 @@
 import { Award, Mail, MapPin, Send } from "lucide-react";
-import React from "react";
+import React, { useState } from "react";
 
 function Contact() {
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    interest: "",
+    message: "",
+  });
+  const [status, setStatus] = useState({ type: "", message: "" });
+  const [loading, setLoading] = useState(false);
+
+  const handleChange = (e) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value,
+    });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setLoading(true);
+    setStatus({ type: "", message: "" });
+
+    try {
+      const response = await fetch(
+        "http://vantage.aoudit.com/api/contact/send-email",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(formData),
+        },
+      );
+
+      const data = await response.json();
+
+      if (data.success) {
+        setStatus({
+          type: "success",
+          message: "Thank you! We'll be in touch soon.",
+        });
+        setFormData({
+          name: "",
+          email: "",
+          phone: "",
+          interest: "",
+          message: "",
+        });
+      } else {
+        setStatus({
+          type: "error",
+          message: data.message || "Something went wrong.",
+        });
+      }
+    } catch (error) {
+      setStatus({
+        type: "error",
+        message: "Failed to send message. Please try again.",
+      });
+    } finally {
+      setLoading(false);
+    }
+  };
+
   return (
     <div id="contact" className="bg-white py-20">
       <div className="max-w-7xl mx-auto px-4">
@@ -51,7 +115,9 @@ function Contact() {
                     Our Promise
                   </h3>
                   <p className="text-gray-600">From Confusion to Clarity</p>
-                  <p className="text-gray-600">From Potential to Performance</p>
+                  <p className="text-gray-600">
+                    fFom Potential to Professional Success
+                  </p>
                 </div>
               </div>
             </div>
@@ -60,38 +126,79 @@ function Contact() {
             <h3 className="text-2xl font-bold text-gray-800 mb-6">
               Get Started Today
             </h3>
-            <div className="space-y-4">
+
+            {status.message && (
+              <div
+                className={`mb-4 p-4 rounded-xl ${
+                  status.type === "success"
+                    ? "bg-green-100 text-green-800 border border-green-200"
+                    : "bg-red-100 text-red-800 border border-red-200"
+                }`}
+              >
+                {status.message}
+              </div>
+            )}
+
+            <form onSubmit={handleSubmit} className="space-y-4">
               <input
                 type="text"
+                name="name"
+                value={formData.name}
+                onChange={handleChange}
                 placeholder="Your Name"
+                required
                 className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:ring-2 focus:ring-cyan-500 focus:border-transparent transition"
               />
               <input
                 type="email"
+                name="email"
+                value={formData.email}
+                onChange={handleChange}
                 placeholder="Your Email"
+                required
                 className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:ring-2 focus:ring-cyan-500 focus:border-transparent transition"
               />
               <input
                 type="tel"
+                name="phone"
+                value={formData.phone}
+                onChange={handleChange}
                 placeholder="Phone Number"
                 className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:ring-2 focus:ring-cyan-500 focus:border-transparent transition"
               />
-              <select className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:ring-2 focus:ring-cyan-500 focus:border-transparent transition">
+              <select
+                name="interest"
+                value={formData.interest}
+                onChange={handleChange}
+                required
+                className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:ring-2 focus:ring-cyan-500 focus:border-transparent transition"
+              >
                 <option value="">I'm interested in...</option>
-                <option value="career">Vantage Career (Individual)</option>
-                <option value="hr">Vantage HR (Organization)</option>
-                <option value="recruitment">Vantage Recruitment</option>
+                <option value="Vantage Career (Individual)">
+                  Vantage Career (Individual)
+                </option>
+                <option value="Vantage HR (Organization)">
+                  Vantage HR (Organization)
+                </option>
+                <option value="Vantage Recruitment">Vantage Recruitment</option>
               </select>
               <textarea
+                name="message"
+                value={formData.message}
+                onChange={handleChange}
                 rows="4"
                 placeholder="Tell us about your career goals..."
                 className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:ring-2 focus:ring-cyan-500 focus:border-transparent transition"
               />
-              <button className="w-full bg-gradient-to-r from-cyan-500 to-blue-600 text-white py-4 rounded-xl font-semibold hover:shadow-lg transition-all flex items-center justify-center gap-2">
-                Start Your Journey
+              <button
+                type="submit"
+                disabled={loading}
+                className="w-full bg-gradient-to-r from-cyan-500 to-blue-600 text-white py-4 rounded-xl font-semibold hover:shadow-lg transition-all flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed"
+              >
+                {loading ? "Sending..." : "Start Your Journey"}
                 <Send className="w-5 h-5" />
               </button>
-            </div>
+            </form>
           </div>
         </div>
       </div>

@@ -20,7 +20,7 @@ export default function ServicesPricing({
       icon: <Clock className="w-5 h-5" />,
       tiers: [
         {
-          name: "Standard",
+          name: "Early Career",
           years: "0–5 years",
           price: "₦8,000",
           original: null,
@@ -39,7 +39,7 @@ export default function ServicesPricing({
       icon: <Zap className="w-5 h-5" />,
       tiers: [
         {
-          name: "Standard",
+          name: "Early Career",
           years: "0–5 years",
           price: "₦10,000",
           original: null,
@@ -58,7 +58,7 @@ export default function ServicesPricing({
       icon: <Rocket className="w-5 h-5" />,
       tiers: [
         {
-          name: "Standard",
+          name: "Early Career",
           years: "0–5 years",
           price: "₦15,000",
           original: null,
@@ -75,7 +75,7 @@ export default function ServicesPricing({
 
   const newCvPricing = [
     {
-      delivery: "Standard",
+      delivery: "Early Career",
       timeline: "5-7 days",
       icon: <Clock className="w-5 h-5" />,
       price: "₦10,000",
@@ -183,7 +183,7 @@ export default function ServicesPricing({
               <p className="text-xl text-gray-600">
                 {serviceType === "cv-review"
                   ? "Choose your delivery speed and tier"
-                  : "Select your delivery timeline (Standard Tier Only for 0-5 years experience)"}
+                  : "Select your delivery timeline (Early Career Tier Only for 0-5 years experience)"}
               </p>
             </div>
 

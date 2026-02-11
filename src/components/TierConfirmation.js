@@ -14,7 +14,11 @@ import { paymentManager } from "../api";
 
 export default function TierConfirmation({
   service = "cv-review",
-  delivery = { delivery: "Standard", timeline: "3-5 days", price: "₦5,000" },
+  delivery = {
+    delivery: "Early Career",
+    timeline: "3-5 days",
+    price: "₦5,000",
+  },
   tier = { name: "Professional", price: "₦5,000" },
   onBack = () => alert("Going back"),
 }) {
@@ -69,10 +73,6 @@ export default function TierConfirmation({
       errors.phone = "Phone number is required";
     }
 
-    // else if (!/^[\d\s\+\-\(\)]+$/.test(formData.phone)) {
-    //   errors.phone = "Invalid phone number format";
-    // }
-
     setFormErrors(errors);
     return Object.keys(errors).length === 0;
   };
@@ -106,7 +106,7 @@ export default function TierConfirmation({
   const checkPaymentStatus = async (reference) => {
     try {
       const response = await fetch(
-        `https://vantage.aoudit.com/api/payment/verify/${reference}`,
+        `http://vantage.aoudit.com/api/payment/verify/${reference}`,
       );
       const data = await response.json();
 
@@ -137,13 +137,9 @@ export default function TierConfirmation({
 
     const checkIfClosed = setInterval(async () => {
       if (!paymentWindow || paymentWindow.closed) {
-        console.log("closed");
-
         await paymentManager.trackAbandonmentOnExit();
         clearInterval(checkIfClosed);
         setLoading(false);
-      } else {
-        console.log("openes");
       }
     }, 1000);
     try {

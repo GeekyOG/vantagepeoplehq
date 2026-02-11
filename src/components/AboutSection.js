@@ -22,8 +22,7 @@ function AboutSection() {
               Clarity Over Confusion
             </h3>
             <p className="text-gray-600">
-              No vague motivational talk—just clear pathways to results backed
-              by proven frameworks
+              No generic advice. Just proven strategies that get you hired.
             </p>
           </div>
           <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all">
@@ -31,11 +30,11 @@ function AboutSection() {
               <Award className="w-8 h-8 text-white" />
             </div>
             <h3 className="text-xl font-bold text-gray-800 mb-2">
-              International Standards
+              International Early Careers
             </h3>
             <p className="text-gray-600">
-              UK, US, EU standards for Nigerian talent while understanding local
-              market realities
+              UK, US, EU Early Careers for Nigerian talent while understanding
+              local market realities
             </p>
           </div>
           <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all">
@@ -43,11 +42,11 @@ function AboutSection() {
               <Zap className="w-8 h-8 text-white" />
             </div>
             <h3 className="text-xl font-bold text-gray-800 mb-2">
-              Insider Knowledge, Democratized
+              Inside the Hiring Process
             </h3>
             <p className="text-gray-600">
-              We share strategies that traditionally stayed behind closed doors
-              in banking and consulting
+              The playbook top professionals use, now available to you. What
+              recruiters and hiring managers actually look for.
             </p>
           </div>
         </div>

@@ -218,7 +218,7 @@ function Terms() {
                 </h2>
                 <div className="space-y-4">
                   <p className="text-gray-600 leading-relaxed">
-                    Standard delivery times:
+                    Early Career delivery times:
                   </p>
                   <ul className="space-y-3 text-gray-600">
                     <li className="flex items-start">
@@ -226,7 +226,8 @@ function Terms() {
                         •
                       </span>
                       <span>
-                        <strong>CV Optimization (Standard):</strong> 48 hours
+                        <strong>CV Optimization (Early Career):</strong> 48
+                        hours
                       </span>
                     </li>
                     <li className="flex items-start">
@@ -242,7 +243,8 @@ function Terms() {
                         •
                       </span>
                       <span>
-                        <strong>New CV Creation (Standard):</strong> 5-7 days
+                        <strong>New CV Creation (Early Career):</strong> 5-7
+                        days
                       </span>
                     </li>
                     <li className="flex items-start">
