@@ -69,11 +69,7 @@ function AboutSection() {
                 increasingly competitive job market, where 600,000 graduates
                 enter annually, success requires expert guidance, not guesswork.
               </p>
-              <p className="lg:text-lg text-gray-600 mb-6">
-                Our founder spent over 10 years navigating the Nigerian and UK
-                banking industries—experiencing firsthand the gap between what
-                universities teach and what employers actually value.
-              </p>
+
               <div className="bg-gradient-to-r from-cyan-50 to-blue-50 border-l-4 border-cyan-500 p-6 mb-8 rounded-r-xl">
                 <p className="text-gray-700 italic">
                   "Success isn't just about credentials—it's about knowing how
